@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.mainPart {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans';
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mainPart__Login {
+  display: flex;
+  flex-direction: column;
+}
+.mainPart__Login h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 25.63px;
+  line-height: 33px;
+
+  color: #06152b;
+}
