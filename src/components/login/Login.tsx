@@ -1,16 +1,28 @@
-import axios from 'axios'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import axios from 'axios'
+
+import img from '../../assets/image/login.png'
 
 import styles from './Login.module.css'
 
 const Login = () => {
+  // const [email, setEmail] = useState('test@gmail.com')
+  // const [password, setPassword] = useState('1234567')
+  const navigate = useNavigate()
+
   const btn = () => {
     axios
       .post('http://localhost:3001/login', {
         email: 'test@gmail.com',
-        password: '12345673',
+        password: '1234567'
       })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        navigate('/home')
+        window.localStorage.setItem("token", res.data.token);
+        console.log(res.data)
+      })
   }
   return (
     <div className={styles.wrapper}>
@@ -22,25 +34,31 @@ const Login = () => {
           </h1>
           <h2>Log in</h2>
           <div className={styles.inp_group}>
+            <>
               <label htmlFor="email">Email Address</label>
               <input
                 type="text"
                 name="email"
                 id="email"
                 placeholder="example@gmail.com"
+                required={true}
               />
               <label htmlFor="password">Password</label>
               <input
-                type="text"
+                type="password"
                 name="password"
-                id="email"
+                id="parol"
                 placeholder="example"
+                required={true}
               />
-              <button onClick={btn}>Click me</button>
+              <button onClick={btn}>Log in</button>
+            </>
           </div>
         </div>
       </div>
-      <div className={styles.imgPart}></div>
+      <div className={styles.imgPart}>
+        <img src={img} alt="" />
+      </div>
     </div>
   )
 }

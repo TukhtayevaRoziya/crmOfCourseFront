@@ -4,7 +4,7 @@
 }
 
 .mainPart {
-  width: 25%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,8 +14,12 @@
 }
 
 .mainPart__Login {
+  width: 100%;
+
   display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 50px;
 }
 .mainPart__Login h2 {
   text-align: center;
@@ -24,4 +28,85 @@
   line-height: 33px;
 
   color: #06152b;
+  margin-bottom: 60px;
+}
+
+.inp_group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.inp_group label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+
+  color: #06152b;
+  margin-bottom: 10px;
+}
+
+.inp_group input {
+  background: #f1f4fa;
+  outline: none;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  color: #06152b;
+}
+
+.inp_group input::placeholder {
+  font-weight: 400;
+  font-size: 14.22px;
+  line-height: 19px;
+
+  color: #06152b;
+
+  opacity: 0.7;
+}
+
+.inp_group button {
+  background: #297d3b;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.imgPart {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f4fa;
+}
+
+.imgPart img{
+  width: 55%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 700.9px) {
+  .imgPart{
+    display: none;
+  }
+
+  .mainPart{
+    width: 100%;
+  }
+}
+
+@media (min-width:701px) and (max-width: 1000.9px) {
+  .imgPart,
+  .mainPart{
+    width: 50%;
+  }
 }
