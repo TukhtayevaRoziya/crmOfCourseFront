@@ -5,7 +5,11 @@ import { Layout, Menu } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const Sidebar: React.FC = () => (
+const Sidebar: React.FC = () => {
+  console.log('Sidebar');
+  
+  return (
+
   <Layout>
     <Sider
       breakpoint="lg"
@@ -41,6 +45,6 @@ const Sidebar: React.FC = () => (
       <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
     </Layout>
   </Layout>
-);
+);}
 
 export default Sidebar;
