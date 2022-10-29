@@ -1,15 +1,9 @@
-import { AnyAction } from '@reduxjs/toolkit'
-import { ThunkAction } from 'redux-thunk'
-import { RootState } from '../store'
+
+import { AppThunk } from '../../utility/types'
 import api from './../../utility/api'
 
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from './types'
-export type AppThunk<ReturnType = void> = ThunkAction<
-  ReturnType,
-  RootState,
-  unknown,
-  AnyAction
->
+
 type BodyType = {
   email: string
   password: string

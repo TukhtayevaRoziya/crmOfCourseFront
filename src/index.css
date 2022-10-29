@@ -22,3 +22,9 @@ body {
 .site-layout-background {
   background: #fff;
 }
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #fff;
+}

@@ -1,22 +1,25 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux'
+import { NavLink, Route, Routes, useParams } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 
-import styles from './Sidebar.module.css'
-import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { InitialStateObjType } from '../../redux/reducers/sidebarReducer'
+import Home from './../home/Home'
+
+import styles from './Sidebar.module.css'
 
 const { Header, Content, Sider } = Layout
 
 const Sidebar: React.FC = () => {
   const data = useSelector((state: any) => state.sidebarReducer)
-  console.log(data)
+  const hey = useParams()
+  console.log(hey)
+  const win = window.location.hash
 
   const dataMap = data.map((d: InitialStateObjType) => ({
     key: String(d.id),
     icon: React.createElement(d.icon),
-    label: <NavLink to={'/dashboard/#/' + d.path}>{d.label}</NavLink>,
+    label: <NavLink to={'/dashboard/' + d.path}>{d.label}</NavLink>,
   }))
 
   return (
@@ -29,6 +32,13 @@ const Sidebar: React.FC = () => {
         }}
         onCollapse={(collapsed, type) => {
           console.log(collapsed, type)
+          if (collapsed) {
+            document.getElementById('main')?.classList.remove('dark')
+
+          } else {
+            document.getElementById('main')?.classList.add('dark')
+
+          }
         }}
       >
         <div className="logo">
@@ -40,7 +50,15 @@ const Sidebar: React.FC = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['4']}
+          defaultSelectedKeys={[
+            win === '#/dashboard/'
+              ? '1'
+              : win === '#/dashboard/students'
+              ? '2'
+              : win === '#/dashboard/teachers'
+              ? '3'
+              : '4',
+          ]}
           items={dataMap}
         />
       </Sider>
@@ -53,10 +71,12 @@ const Sidebar: React.FC = () => {
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div
-            className="site-layout-background"
+            className="site-layout-background" id='main'
             style={{ padding: 24, minHeight: 360 }}
           >
-            content
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
           </div>
         </Content>
       </Layout>

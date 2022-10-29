@@ -30,7 +30,10 @@
 .ant-menu-dark .ant-menu-item-selected .anticon,
 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon + span,
 .ant-menu-dark .ant-menu-item-selected .anticon + span,
-.ant-menu-dark .ant-menu-item-selected > a, .ant-menu-dark .ant-menu-item-selected > span > a, .ant-menu-dark .ant-menu-item-selected > a:hover, .ant-menu-dark .ant-menu-item-selected > span > a:hover {
+.ant-menu-dark .ant-menu-item-selected > a,
+.ant-menu-dark .ant-menu-item-selected > span > a.active,
+.ant-menu-dark .ant-menu-item-selected > a.active:hover,
+.ant-menu-dark .ant-menu-item-selected > span > a.active:hover {
   color: #4d44b5 !important;
 }
 
@@ -51,29 +54,52 @@
   max-width: 300px !important;
   min-width: 300px !important;
   flex: 0 0 300px !important;
-  height: 100%;
+  height: 100vh;
 }
 
-.ant-layout-content{
+.ant-layout-content {
   margin: 0 !important;
 }
 
 .site-layout-background,
 .site-layout-sub-header-background,
 body {
-  background: #F3F4FF !important;
+  background: #f3f4ff !important;
 }
 
-.ant-layout-sider-zero-width{
+.ant-layout-sider-zero-width {
   flex: 0 0 0px !important;
   max-width: 0px !important;
   min-width: 0px !important;
   width: 0px !important;
 }
 
+.site-layout-sub-header-background {
+  height: auto !important;
+}
+
+.site-layout-background {
+  padding: 46px 50px !important;
+}
+
 @media screen and (max-width: 991.9px) {
   .ant-layout-sider {
     position: absolute !important;
+    z-index: 1;
+    box-shadow: rgb(0 0 0 / 25%) 0px 54px 55px, rgb(0 0 0 / 12%) 0px -12px 30px,
+      rgb(0 0 0 / 12%) 0px 4px 6px, rgb(0 0 0 / 17%) 0px 12px 13px,
+      rgb(0 0 0 / 9%) 0px -3px 5px;
   }
-  
+  .site-layout-background {
+    padding: 26px 30px !important;
+  }
+  .dark {
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.9px) {
+  .site-layout-background {
+    padding: 26px 30px !important;
+  }
 }
