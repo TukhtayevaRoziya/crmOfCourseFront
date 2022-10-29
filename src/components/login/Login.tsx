@@ -1,34 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import axios from 'axios'
-
 import img from '../../assets/image/login.png'
+
+import login from './../../redux/actions/authAction'
 
 import styles from './Login.module.css'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const { isAuth } = useSelector((state: any) => state.authReducer)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate('/dashboard')
+    }
+  }, [isAuth, navigate])
 
   const btn = () => {
     if (!email || !password) {
       alert('Fill all field, please!')
     } else {
-      axios
-        .post('http://localhost:3001/login', {
-          email: email,
-          password: password,
-        })
-        .then((res) => {
-          navigate('/home')
-          window.localStorage.setItem('token', res.data.token)
-          console.log(res)
-        })
-        .catch((error) => {
-          alert('Email or Password is incorrect')
-        })
+      const data = { email, password }
+      dispatch<any>(login(data))
     }
   }
 

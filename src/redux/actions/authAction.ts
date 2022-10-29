@@ -1,10 +1,23 @@
+import { AnyAction } from '@reduxjs/toolkit'
+import { ThunkAction } from 'redux-thunk'
+import { RootState } from '../store'
 import api from './../../utility/api'
 
 import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from './types'
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  AnyAction
+>
+type BodyType = {
+  email: string
+  password: string
+}
 
-export const login = (body: any) => async (dispatch: any) => {
+const login = (body: BodyType): AppThunk  => async (dispatch) => {
   try {
-    const res = await api.post(`/auth`, body)
+    const res = await api.post(`login`, body)
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
@@ -17,6 +30,8 @@ export const login = (body: any) => async (dispatch: any) => {
     })
   }
 }
+
+export default login
 
 export const logout = () => (dispatch: any) => {
   dispatch({ type: LOGOUT })

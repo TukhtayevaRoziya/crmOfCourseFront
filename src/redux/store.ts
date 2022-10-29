@@ -2,26 +2,32 @@ import { configureStore } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
 
 import authToken from '../utility/authToken'
-import authReducer from './reducers/authReducer'
+import { authReducer } from './reducers/authReducer'
+import { sidebarReducer } from './reducers/sidebarReducer'
 
 export const store = configureStore({
   reducer: {
-    authReducer
+    authReducer,
+    sidebarReducer,
   },
-  middleware:[thunk]
+  middleware: [thunk],
 })
 
 // window.store = store;
 
-let currentState = store.getState();
+let currentState = store.getState()
 
 store.subscribe(() => {
-  let previousState = currentState;
-  currentState = store.getState();
+  let previousState = currentState
+  currentState = store.getState()
   if (previousState.authReducer.token !== currentState.authReducer.token) {
-    const token = currentState.authReducer.token;
-    authToken(token);
+    const token = currentState.authReducer.token
+    authToken(token)
   }
-});
+})
 
-export default store;
+export default store
+
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch

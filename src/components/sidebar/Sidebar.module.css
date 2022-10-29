@@ -1,0 +1,17 @@
+.logo {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 54px;
+  color: #ffffff;
+  display: flex;
+  margin-bottom: 26px;
+}
+
+.logo span {
+  margin-right: 16px;
+  background: #fb7d5b;
+  border-radius: 16px;
+  padding: 1px 15px;
+  display: flex;
+  align-items: center;
+}

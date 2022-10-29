@@ -1,0 +1,79 @@
+.ant-layout-sider,
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub,
+.ant-layout-sider-zero-width-trigger {
+  background: #4d44b5 !important;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #f3f4ff !important;
+  border-radius: 40px 0px 0px 40px;
+  box-shadow: 0px 20px 50px rgba(191, 21, 108, 0.05);
+}
+
+.ant-menu-dark.ant-menu-inline .ant-menu-item,
+.ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+  height: 50px !important;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item,
+.ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
+  transition: all 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) !important;
+}
+
+.ant-layout-sider-children {
+  margin-left: 30px;
+  margin-top: 30px !important;
+}
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon,
+.ant-menu-dark .ant-menu-item-selected .anticon,
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon + span,
+.ant-menu-dark .ant-menu-item-selected .anticon + span,
+.ant-menu-dark .ant-menu-item-selected > a, .ant-menu-dark .ant-menu-item-selected > span > a, .ant-menu-dark .ant-menu-item-selected > a:hover, .ant-menu-dark .ant-menu-item-selected > span > a:hover {
+  color: #4d44b5 !important;
+}
+
+.anticon svg {
+  font-size: 18px;
+}
+
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-item-group-title,
+.ant-menu-dark .ant-menu-item > a,
+.ant-menu-dark .ant-menu-item > span > a {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.ant-layout-sider {
+  width: 300px !important;
+  max-width: 300px !important;
+  min-width: 300px !important;
+  flex: 0 0 300px !important;
+  height: 100%;
+}
+
+.ant-layout-content{
+  margin: 0 !important;
+}
+
+.site-layout-background,
+.site-layout-sub-header-background,
+body {
+  background: #F3F4FF !important;
+}
+
+.ant-layout-sider-zero-width{
+  flex: 0 0 0px !important;
+  max-width: 0px !important;
+  min-width: 0px !important;
+  width: 0px !important;
+}
+
+@media screen and (max-width: 991.9px) {
+  .ant-layout-sider {
+    position: absolute !important;
+  }
+  
+}
