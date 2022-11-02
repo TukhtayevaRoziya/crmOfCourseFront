@@ -34,10 +34,8 @@ const Sidebar: React.FC = () => {
           console.log(collapsed, type)
           if (collapsed) {
             document.getElementById('main')?.classList.remove('dark')
-
           } else {
             document.getElementById('main')?.classList.add('dark')
-
           }
         }}
       >
@@ -71,7 +69,8 @@ const Sidebar: React.FC = () => {
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div
-            className="site-layout-background" id='main'
+            className="site-layout-background"
+            id="main"
             style={{ padding: 24, minHeight: 360 }}
           >
             <Routes>
