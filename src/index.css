@@ -28,3 +28,7 @@ body {
   height: 8px;
   background-color: #fff;
 }
+
+.ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+  color: #4D44B5 !important;
+}
