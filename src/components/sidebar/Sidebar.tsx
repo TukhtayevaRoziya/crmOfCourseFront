@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { NavLink, Route, Routes, useParams } from 'react-router-dom'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 
 import { InitialStateObjType } from '../../redux/reducers/sidebarReducer'
@@ -12,8 +12,8 @@ const { Header, Content, Sider } = Layout
 
 const Sidebar: React.FC = () => {
   const data = useSelector((state: any) => state.sidebarReducer)
-  const hey = useParams()
-  console.log(hey)
+  // const hey = useParams()
+  // console.log(hey)
   const win = window.location.hash
 
   const dataMap = data.map((d: InitialStateObjType) => ({
@@ -28,10 +28,10 @@ const Sidebar: React.FC = () => {
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
-          console.log(broken)
+          // console.log(broken)
         }}
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type)
+          // console.log(collapsed, type)
           if (collapsed) {
             document.getElementById('main')?.classList.remove('dark')
           } else {

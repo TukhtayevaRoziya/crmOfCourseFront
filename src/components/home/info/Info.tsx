@@ -10,7 +10,6 @@ import styles from './Info.module.css'
 const Info = () => {
   type ResType = {
     id: number
-    // logo: JSX.Element
     logo_color: string
     title: string
     text: number
@@ -21,43 +20,8 @@ const Info = () => {
   useEffect(() => {
     api.get('info').then((res) => {
       setData(res.data)
-      console.log(res.data); 
     })
   }, [])
-
-  // const data = [
-  //   {
-  //     id: 1,
-  //     logo: <BsFillPersonFill />,
-  //     logo_color: '#4d44b5',
-  //     title: 'Students',
-  //     text: info.studentsNum,
-  //   } as ResType, 
-  //   {
-  //     id: 2,
-  //     logo: <GiTeacher />,
-  //     logo_color: '#FB7D5B',
-
-  //     title: 'Teachers',
-  //     text: info.teachersNum,
-  //   } as ResType, 
-  //   {
-  //     id: 3,
-  //     logo: <GiTeacher />,
-  //     logo_color: '#FCC43E',
-
-  //     title: 'Events',
-  //     text: info.eventsNum,
-  //   } as ResType, 
-  //   {
-  //     id: 3,
-  //     logo: <GiTeacher />,
-  //     logo_color: '#FCC43E',
-
-  //     title: 'Food',
-  //     text: info.eventsNum,
-  //   } as ResType, 
-  // ]
 
   const dataMap = data.map((d: ResType) => {
     return (

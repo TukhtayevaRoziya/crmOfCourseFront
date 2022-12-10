@@ -8,10 +8,9 @@ import {
   Title,
   Tooltip,
   Legend,
+  registerables
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
-import faker from 'faker'
-import axios from 'axios'
 import api from './../../../utility/api'
 
 ChartJS.register(
@@ -22,35 +21,15 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
+...registerables
 )
 
 export const options = {
   responsive: true,
-  interaction: {
-    mode: 'index' as const,
-    intersect: false,
-  },
-  stacked: false,
   plugins: {
-    title: {
-      display: false,
-      text: '',
-    },
-  },
-  scales: {
-    y: {
-      type: 'linear' as const,
-      display: true,
-      position: 'left' as const,
-    },
-    y1: {
-      type: 'linear' as const,
-      display: true,
-      position: 'bottom' as const,
-      grid: {
-        drawOnChartArea: false,
-      },
-    },
+    legend: {
+      position: 'top' as const,
+    }
   },
 }
 
@@ -67,23 +46,48 @@ export function ChartBox() {
     })
   }, [])
 
+  var monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]
+
+  var today = new Date()
+  var last5Months = []
+
+  for (var i = 0; i < 5; i++) {
+    last5Months.push(monthNames[today.getMonth() - i])
+  }
+
+  const getLastMonths = last5Months.reverse()
+
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels:getLastMonths,
     datasets: [
       {
         label: 'This Week',
-        data: chartData.data1,
-        borderColor: '#FB7D5B',
+        data: chartData.data2,
+        borderColor: '#FCC43E',
         backgroundColor: '#fff',
         yAxisID: 'y',
       },
       {
         label: 'Last Week',
-        data: chartData.data2,
-        borderColor: '#FCC43E',
+        data: chartData.data1,
+        borderColor: '#FB7D5B',
         backgroundColor: '#fff',
-        yAxisID: 'y1',
+        yAxisID: 'y',
       },
+      
     ],
   }
 

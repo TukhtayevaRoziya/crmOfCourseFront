@@ -54,7 +54,7 @@
   max-width: 300px !important;
   min-width: 300px !important;
   flex: 0 0 300px !important;
-  height: 100vh;
+  height: auto;
 }
 
 .ant-layout-content {
