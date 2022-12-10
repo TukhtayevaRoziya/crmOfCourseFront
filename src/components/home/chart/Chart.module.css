@@ -1,0 +1,16 @@
+.body {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  margin-top: 3rem;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #303972;
+}

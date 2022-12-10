@@ -23,8 +23,9 @@
 }
 
 .ant-layout-sider-children {
-  margin-left: 30px;
+  padding-left: 30px;
   margin-top: 30px !important;
+  background: #4d44b5 !important;
 }
 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon,
 .ant-menu-dark .ant-menu-item-selected .anticon,

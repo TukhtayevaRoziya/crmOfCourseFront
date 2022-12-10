@@ -8,10 +8,12 @@ import {
   Title,
   Tooltip,
   Legend,
-  registerables
+  registerables,
 } from 'chart.js'
 import { Line } from 'react-chartjs-2'
 import api from './../../../utility/api'
+
+import styles from './Chart.module.css'
 
 ChartJS.register(
   CategoryScale,
@@ -21,16 +23,35 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-...registerables
+  ...registerables,
 )
 
 export const options = {
   responsive: true,
   plugins: {
+    title: {
+      display: true,
+      text: 'Custom Chart Title',
+    },
     legend: {
       position: 'top' as const,
-    }
+      align: 'end' as const,
+      maxWidth: 100,
+      labels:{
+        boxWidth: 3,
+        boxHeight: 3,
+        borderWidth: 2,
+        background: '#FFFFFF',
+        pointStyle: 'circle'
+      }
+    },
   },
+  layout: {
+    padding: {
+      bottom: 50,
+    },
+  },
+  borderJoinStyle: 'bevel',
 }
 
 export function ChartBox() {
@@ -71,25 +92,37 @@ export function ChartBox() {
   const getLastMonths = last5Months.reverse()
 
   const data = {
-    labels:getLastMonths,
+    labels: getLastMonths,
     datasets: [
       {
         label: 'This Week',
         data: chartData.data2,
         borderColor: '#FCC43E',
         backgroundColor: '#fff',
+        color: 'red',
         yAxisID: 'y',
+        borderWidth: 6,
+        borderRadius: 70,
+        circular: true,
       },
       {
         label: 'Last Week',
         data: chartData.data1,
         borderColor: '#FB7D5B',
         backgroundColor: '#fff',
+        color: 'red',
+        borderRadius: 70,
         yAxisID: 'y',
+        borderWidth: 6,
+        circular: true,
       },
-      
     ],
   }
 
-  return <Line options={options} data={data} />
+  return (
+    <div className={styles.body}>
+      {/* <h1 className={styles.title}>Custom Chart Title</h1> */}
+      <Line options={options} data={data} />
+    </div>
+  )
 }
