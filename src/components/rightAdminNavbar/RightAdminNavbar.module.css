@@ -1,5 +1,59 @@
-.body{
+.body {
   width: 250px;
   background-color: #fff;
   height: 100%;
+}
+
+.header__icons {
+  box-shadow: 0px 20px 50px rgba(191, 21, 108, 0.05);
+  height: 40px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #a098ae;
+  font-size: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.header__icons1 {
+  margin-right: 20px;
+}
+
+.header__adminInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__adminInfo h1 {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #303972;
+}
+
+.header__adminInfo p {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #a098ae;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.header__img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
 }

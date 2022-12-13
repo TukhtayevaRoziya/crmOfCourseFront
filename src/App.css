@@ -27,6 +27,26 @@
   margin-top: 30px !important;
   background: #4d44b5 !important;
 }
+
+.ant-tooltip-arrow-content {
+  --antd-arrow-background-color: #a098ae !important;
+}
+
+.ant-tooltip {
+  color: #a098ae;
+}
+
+.ant-tooltip-inner{
+  min-height: auto !important;
+  padding: .5em .75em !important;
+  background: #a098ae !important;
+  border-radius: 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item:hover, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title:hover, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title:hover, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-active, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-active, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-active, :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-active{
+  background-color: transparent;
+}
+
 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon,
 .ant-menu-dark .ant-menu-item-selected .anticon,
 .ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon + span,

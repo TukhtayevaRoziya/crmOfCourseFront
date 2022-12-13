@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { BsFillPersonFill } from 'react-icons/bs'
 import { GiTeacher } from "react-icons/gi";
+import { IoCafeOutline } from "react-icons/io5";
+import { AiOutlineCalendar } from "react-icons/ai";
 
 import api from '../../../utility/api'
 
@@ -28,7 +30,7 @@ const Info = () => {
       <div className={styles.block} key={d.id}>
         <div className={styles.block__icon} style={{
           background: d.logo_color
-        }}>{d.id === 1 ? <BsFillPersonFill/> : d.id === 2 ? <GiTeacher/> : <GiTeacher/>}</div>
+        }}>{d.id === 1 ? <BsFillPersonFill/> : d.id === 2 ? <GiTeacher/> : d.id === 3 ? <AiOutlineCalendar/> : <IoCafeOutline />}</div>
         <h1 className={styles.block__title}>{d.title}</h1>
         <h1 className={styles.block__text}>{d.text}</h1>
       </div>

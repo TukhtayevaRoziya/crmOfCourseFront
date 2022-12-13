@@ -8,7 +8,7 @@ import authToken from './utility/authToken'
 import { store } from './redux/store'
 
 import './App.css'
-import 'antd/dist/antd.css'
+import 'antd/dist/reset.css'
 
 function App() {
   useEffect(() => {

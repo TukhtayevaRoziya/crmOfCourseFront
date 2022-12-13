@@ -8,3 +8,15 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   AnyAction
 >
+
+
+// Right Amdin Navbar Icons
+
+export type RightAdminNavbar_Icons__PropsType = {
+  email: string
+  name: string
+  password: string
+  surname: string
+  _id: number
+  image:string
+}
