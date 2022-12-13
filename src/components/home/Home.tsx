@@ -4,7 +4,7 @@ import Info from './info/Info'
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ width: 'calc(100% - 1px)' }}>
       <Info />
       <ChartBox />
     </div>

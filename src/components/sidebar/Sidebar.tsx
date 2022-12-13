@@ -4,6 +4,7 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 
 import { InitialStateObjType } from '../../redux/reducers/sidebarReducer'
+import RightAdminNavbar from '../rightAdminNavbar/RightAdminNavbar'
 import Home from './../home/Home'
 
 import styles from './Sidebar.module.css'
@@ -12,8 +13,6 @@ const { Header, Content, Sider } = Layout
 
 const Sidebar: React.FC = () => {
   const data = useSelector((state: any) => state.sidebarReducer)
-  // const hey = useParams()
-  // console.log(hey)
   const win = window.location.hash
 
   const dataMap = data.map((d: InitialStateObjType) => ({
@@ -23,8 +22,9 @@ const Sidebar: React.FC = () => {
   }))
 
   return (
-    <Layout>
+    <Layout  className={styles.mainWrap}>
       <Sider
+      style={{grid: 'n1'}}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
@@ -49,27 +49,30 @@ const Sidebar: React.FC = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={[
-            win === '#/dashboard/'
-              ? '1'
-              : win === '#/dashboard/students'
+            win === '#/dashboard/students'
               ? '2'
               : win === '#/dashboard/teachers'
               ? '3'
-              : '4',
+              : win === '#/dashboard/events'
+              ? '4'
+              : win === '#/dashboard/events'
+              ? '1'
+              : '1',
           ]}
           items={dataMap}
         />
       </Sider>
-      <Layout>
+      <Layout style={{gridArea:'c', width:'calc(100% - 1px)'}}>
+        <div >
         <Header
           className="site-layout-sub-header-background"
-          style={{ padding: 0 }}
+          style={{ padding: 0, width: 'calc(100% - 1px)' }}
         >
           <h1 className={styles.title}>Dashboard</h1>
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div
-            className="site-layout-background"
+            className="site-layout-background "
             id="main"
             style={{ padding: 24, minHeight: 360 }}
           >
@@ -78,7 +81,9 @@ const Sidebar: React.FC = () => {
             </Routes>
           </div>
         </Content>
+        </div>
       </Layout>
+        <RightAdminNavbar />
     </Layout>
   )
 }

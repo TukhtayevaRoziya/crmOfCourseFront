@@ -23,7 +23,7 @@
 }
 
 .ant-layout-sider-children {
-  padding-left: 30px;
+  padding-left: 20px;
   margin-top: 30px !important;
   background: #4d44b5 !important;
 }
@@ -51,10 +51,10 @@
 }
 
 .ant-layout-sider {
-  width: 300px !important;
-  max-width: 300px !important;
-  min-width: 300px !important;
-  flex: 0 0 300px !important;
+  width: 250px !important;
+  max-width: 250px !important;
+  min-width: 250px !important;
+  flex: 0 0 250px !important;
   height: auto;
 }
 

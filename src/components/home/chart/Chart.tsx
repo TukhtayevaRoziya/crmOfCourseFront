@@ -29,26 +29,24 @@ ChartJS.register(
 export const options = {
   responsive: true,
   plugins: {
-    title: {
-      display: true,
-      text: 'Custom Chart Title',
-    },
+    // title: {
+    //   display: true,
+    //   text: 'Custom Chart Title',
+    // },
     legend: {
       position: 'top' as const,
       align: 'end' as const,
       maxWidth: 100,
-      labels:{
+      padding: {
+        bottom: 100,
+      },
+      labels: {
         boxWidth: 3,
         boxHeight: 3,
         borderWidth: 2,
         background: '#FFFFFF',
-        pointStyle: 'circle'
-      }
-    },
-  },
-  layout: {
-    padding: {
-      bottom: 50,
+        pointStyle: 'circle',
+      },
     },
   },
   borderJoinStyle: 'bevel',
@@ -63,7 +61,6 @@ export function ChartBox() {
   useEffect(() => {
     api.get('chart').then((res) => {
       setChartData(res.data)
-      console.log(res.data)
     })
   }, [])
 
@@ -121,8 +118,8 @@ export function ChartBox() {
 
   return (
     <div className={styles.body}>
-      {/* <h1 className={styles.title}>Custom Chart Title</h1> */}
-      <Line options={options} data={data} />
+      <h1 className={styles.title}>School Performance</h1>
+      <Line style={{width: '100%'}} options={options} data={data} />
     </div>
   )
 }

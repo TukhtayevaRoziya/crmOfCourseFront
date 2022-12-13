@@ -1,9 +1,16 @@
-import React from 'react';
+import * as React from 'react';
 import { render, screen } from '@testing-library/react';
+
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test('should just test', () => {
+  render(<App />)
+  screen.debug()
+})
+
+
+// describe('App', () => {
+//   // it('renders App component', () => {
+//     render(<App />);
+//   // });
+// });
