@@ -16,7 +16,6 @@ const Info = () => {
     title: string
     text: number
   }
-
   const [data, setData] = useState([])
 
   useEffect(() => {

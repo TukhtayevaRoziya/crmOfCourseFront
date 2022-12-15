@@ -78,6 +78,7 @@ const Sidebar: React.FC = () => {
           >
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/settings" element={<Home />} />
             </Routes>
           </div>
         </Content>

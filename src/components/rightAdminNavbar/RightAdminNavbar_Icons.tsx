@@ -1,13 +1,14 @@
 import React, {FC} from 'react'
-import { Dropdown } from 'antd'
-import { IoIosSettings } from 'react-icons/io'
-import { IoMdNotificationsOutline } from 'react-icons/io'
+import { useDispatch } from 'react-redux'
+import { Dropdown, MenuProps } from 'antd'
+import { IoIosSettings, IoMdNotificationsOutline, IoIosLogOut } from 'react-icons/io'
+
+import { logout } from '../../redux/actions/authAction'
 import { RightAdminNavbar_Icons__PropsType } from '../../utility/types'
-import type { MenuProps } from 'antd'
 
 import styles from './RightAdminNavbar.module.css'
 
-const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: RightAdminNavbar_Icons__PropsType) => {
+const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) => {
   const items2: MenuProps['items'] = [
     {
       key: '1',
@@ -15,46 +16,53 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: Right
     },
   ]
 
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch<any>(logout());
+    localStorage.removeItem("token");
+  }  
+
   const items: MenuProps['items'] = [
     {
       key: '1',
+      className:'RightAdminNavbarIcons1',
       label: (
         <p>
           Signed in as
+          <br/>
           <strong>
-            {data.name} {data.surname}
+            {data.data.name} {data.data.surname}
           </strong>
         </p>
       ),
     },
     {
       key: '2',
+      
       label: (
         <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.aliyun.com"
+          href="/settings"
         >
-          2nd menu item
+          Settings
         </a>
       ),
     },
     {
       key: '3',
+      className:'RightAdminNavbarIcons3',
+
       label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.luohanacademy.com"
+        <div
+          onClick={logoutHandler}
         >
-          3rd menu item
-        </a>
+          Logout <IoIosLogOut />
+        </div>
       ),
     },
   ]
 
   return (
-    <div>
+    <>
         <div className={styles.header__icons + ' ' + styles.header__icons1}>
           <Dropdown menu={{ items: items2 }} placement="bottom">
             <IoMdNotificationsOutline />
@@ -65,7 +73,7 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: Right
             <IoIosSettings />
           </Dropdown>
         </div>
-    </div>
+    </>
   )
 }
 

@@ -1,4 +1,5 @@
 
+import { Dispatch } from '@reduxjs/toolkit'
 import { AppThunk } from '../../utility/types'
 import api from './../../utility/api'
 
@@ -27,7 +28,7 @@ const login = (body: BodyType): AppThunk  => async (dispatch) => {
 
 export default login
 
-export const logout = () => (dispatch: any) => {
+export const logout = () =>  (dispatch: Dispatch) => {
   dispatch({ type: LOGOUT })
 }
 

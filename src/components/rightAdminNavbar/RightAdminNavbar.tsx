@@ -22,14 +22,15 @@ const RightAdminNavbar = () => {
   useEffect(() => {
     api.get('/').then((res: any) => {
       setData(res.data[0])
-      console.log(res.data[0])
     })
   }, [])
+  console.log({data}.data._id)
+
   return (
     <div className={styles.body}>
       <div className={styles.header}>
         {/* @ts-ignore */}
-        <RightAdminNavbarIcons data={data}/>
+        <RightAdminNavbarIcons data={data} />
         <div className={styles.header__adminInfo}>
           <h1>
             {data.name} {data.surname[0]}.
