@@ -24,7 +24,6 @@ const RightAdminNavbar = () => {
       setData(res.data[0])
     })
   }, [])
-  console.log({data}.data._id)
 
   return (
     <div className={styles.body}>

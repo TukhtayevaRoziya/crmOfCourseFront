@@ -35,6 +35,12 @@ const initialState = [
     label: 'Events',
     icon: MdDateRange,
   } as InitialStateObjType,
+  {
+    id: 5,
+    path: 'settings',
+    label: 'Settings',
+    icon: MdDateRange,
+  } as InitialStateObjType,
 ]
 
 export const sidebarReducer = (state = initialState, action: any) => {

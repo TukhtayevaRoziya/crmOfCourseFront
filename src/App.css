@@ -155,6 +155,10 @@ body {
   margin-left: 10px;
 }
 
+:where(.css-dev-only-do-not-override-26rdvq).ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):active{
+  background-color: none !important;
+}
+
 :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown .ant-dropdown-menu,
 :where(.css-dev-only-do-not-override-26rdvq).ant-dropdown-menu-submenu
   .ant-dropdown-menu {

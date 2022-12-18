@@ -7,6 +7,7 @@ import { logout } from '../../redux/actions/authAction'
 import { RightAdminNavbar_Icons__PropsType } from '../../utility/types'
 
 import styles from './RightAdminNavbar.module.css'
+import { NavLink } from 'react-router-dom';
 
 const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) => {
   const items2: MenuProps['items'] = [
@@ -40,11 +41,11 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) 
       key: '2',
       
       label: (
-        <a
-          href="/settings"
+        <NavLink
+          to="settings"
         >
           Settings
-        </a>
+        </NavLink>
       ),
     },
     {

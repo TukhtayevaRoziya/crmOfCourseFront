@@ -32,6 +32,7 @@
   display: grid !important;
   grid-template-areas:
       'n1 c n';
+  grid-template-columns: 1fr 10fr 1fr;
 }
 
 @media (min-width: 992px) and (max-width: 1199.9px) {

@@ -5,6 +5,7 @@ import { Layout, Menu } from 'antd'
 
 import { InitialStateObjType } from '../../redux/reducers/sidebarReducer'
 import RightAdminNavbar from '../rightAdminNavbar/RightAdminNavbar'
+import Settings from './../settings/Settings';
 import Home from './../home/Home'
 
 import styles from './Sidebar.module.css'
@@ -55,8 +56,8 @@ const Sidebar: React.FC = () => {
               ? '3'
               : win === '#/dashboard/events'
               ? '4'
-              : win === '#/dashboard/events'
-              ? '1'
+              : win === '#/dashboard/settings'
+              ? '5'
               : '1',
           ]}
           items={dataMap}
@@ -78,7 +79,7 @@ const Sidebar: React.FC = () => {
           >
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/settings" element={<Home />} />
+              <Route path="/settings" element={<Settings/>} />
             </Routes>
           </div>
         </Content>
