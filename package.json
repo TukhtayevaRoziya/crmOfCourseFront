@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
+    "@syncfusion/ej2-react-calendars": "^20.3.59",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.2.1",

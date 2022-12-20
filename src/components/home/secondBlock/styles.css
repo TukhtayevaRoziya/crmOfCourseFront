@@ -1,0 +1,150 @@
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+h2,
+p,
+.calendar,
+footer {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  border-radius: 24px;
+}
+
+.e-calendar .e-header.e-month,
+.e-bigger.e-small .e-calendar .e-header.e-month {
+
+  margin-bottom: 1rem;
+}
+
+select,
+input {
+  width: 220px;
+  padding: 0;
+  margin: 0;
+}
+legend {
+  font-size: 60%;
+}
+fieldset {
+  width: 250px;
+  bottom: 0;
+  height: 33px;
+  padding: 0px;
+  /* margin: p; */
+  margin-left: 508px;
+  color: grey;
+  border: 1px solid grey;
+}
+
+input,
+select {
+  border: none;
+  width: 95%;
+  padding: 3px;
+  position: static;
+}
+
+#js-licensing {
+  display: none !important;
+}
+
+.e-calendar,
+.e-bigger.e-small .e-calendar {
+  max-width: 100% !important;
+  border-radius: 24px;
+  border: none;
+}
+
+.e-weekend span[title*=Sunday],
+.e-btn.e-flat.e-primary, .e-css.e-btn.e-flat.e-primary{
+  color: #FB7D5B !important;
+}
+
+.e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected:hover span.e-day, .e-calendar .e-content td.e-selected.e-focused-date span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected:hover span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected.e-focused-date span.e-day,
+.e-calendar .e-content td.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day{
+  background-color: #FB7D5B !important;
+}
+
+.e-calendar .e-content span, .e-bigger.e-small .e-calendar .e-content span {
+  font-weight: 400 !important;
+}
+
+.e-calendar th, .e-bigger.e-small .e-calendar th{
+  color: #A098AE;
+}
+.e-calendar .e-header .e-title, .e-bigger.e-small .e-calendar .e-header .e-title {
+  font-weight: 700;
+}
+
+.e-calendar .e-date-icon-prev, .e-calendar .e-date-icon-next, .e-bigger.e-small .e-calendar .e-date-icon-prev, .e-bigger.e-small .e-calendar .e-date-icon-next,
+.e-calendar .e-header .e-title, .e-bigger.e-small .e-calendar .e-header .e-title,
+.e-calendar .e-content span, .e-bigger.e-small .e-calendar .e-content span {
+  color: #303972;
+}
+
+.e-calendar .e-content td.e-today.e-selected span.e-day, .e-bigger.e-small .e-calendar .e-content td.e-today.e-selected span.e-day{
+  border: 1px solid #FB7D5B !important;
+}
+
+footer #cal {
+  background-color: #c70039;
+  margin-left: 30px;
+  color: white;
+  width: 130px;
+  height: 35px;
+}
+#cal:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+header #log {
+  margin-top: 15px;
+}
+header {
+  background-color: #c70039;
+  height: 50px;
+}
+div.btns {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding: 10px;
+  grid-gap: 10px;
+  width: 280px;
+  margin-left: 30%;
+}
+.grid-item > button {
+  border: 1px solid grey;
+  height: 30px;
+  width: 68px;
+  background-color: white;
+  color: grey;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  padding: 6px;
+  border-radius: 9%;
+}
+.grid-item18 > button {
+  border: 1px solid grey;
+  width: 68px;
+  height: 30px;
+  padding: 10px;
+  background-color: white;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+  border-radius: 9%;
+}
+div > button {
+  margin: auto 7px 5px 7px;
+}
+.grid-item18 > button {
+  margin: auto auto auto 49%;
+}
+.grid-item > button:hover,
+.grid-item18 > button:hover {
+  color: black;
+  cursor: pointer;
+}
