@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 
-
-
 import api from '../../utility/api'
 import RightAdminNavbarIcons from './RightAdminNavbar_Icons'
 
@@ -18,7 +16,6 @@ const RightAdminNavbar = () => {
       'https://www.kindpng.com/picc/m/247-2472302_admin-transparent-background-admin-icon-hd-png-download.png',
   })
 
-
   useEffect(() => {
     api.get('/').then((res: any) => {
       setData(res.data[0])
@@ -30,13 +27,15 @@ const RightAdminNavbar = () => {
       <div className={styles.header}>
         {/* @ts-ignore */}
         <RightAdminNavbarIcons data={data} />
+        <div className={styles.header__adminInfo__wrap}>
         <div className={styles.header__adminInfo}>
           <h1>
             {data.name} {data.surname[0]}.
           </h1>
           <p>Admin</p>
         </div>
-        <img className={styles.header__img} src={data.image} alt="" />
+        <img className={styles.header__img} draggable={false} src={data.image} alt="" />
+        </div>
       </div>
     </div>
   )

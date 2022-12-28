@@ -29,10 +29,6 @@ ChartJS.register(
 export const options = {
   responsive: true,
   plugins: {
-    // title: {
-    //   display: true,
-    //   text: 'Custom Chart Title',
-    // },
     legend: {
       position: 'top' as const,
       align: 'end' as const,

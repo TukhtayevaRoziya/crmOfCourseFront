@@ -98,7 +98,7 @@
   max-width: 250px !important;
   min-width: 250px !important;
   flex: 0 0 250px !important;
-  height: auto;
+  height: 100%;
 }
 
 .ant-layout-content {
@@ -165,7 +165,17 @@ body {
   padding: 0 !important;
 }
 
+.home_wrap{
+  width: calc(100% - 1px);
+}
+
 @media screen and (max-width: 991.9px) {
+  .home_wrap{
+    width: 80%;
+  }
+  .ant-layout-sider-children{
+    padding-left: 0;
+  }
   .ant-layout-sider {
     position: absolute !important;
     z-index: 1;
@@ -178,6 +188,8 @@ body {
   }
   .dark {
     opacity: 0.3;
+    height: 70vh;
+    overflow: hidden;
   }
 }
 

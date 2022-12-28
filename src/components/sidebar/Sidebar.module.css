@@ -35,6 +35,17 @@
   grid-template-columns: 1fr 10fr 1fr;
 }
 
+
+@media (min-width:0) and (max-width: 991.9px) {
+  .mainWrap{
+    grid-template-areas:
+        'n n'
+        'n1 c';
+  grid-template-columns: 1fr 10fr ;
+
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199.9px) {
   .title {
     margin: 50px 0 0 30px;

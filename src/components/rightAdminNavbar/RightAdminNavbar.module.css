@@ -1,7 +1,12 @@
+.wrap{
+  display: flex;
+}
+
 .body {
   width: 250px;
   background-color: #fff;
   height: 100%;
+  grid-area: n;
 }
 
 .header__icons {
@@ -56,4 +61,19 @@
   height: 40px;
   border-radius: 50%;
   object-fit: contain;
+}
+
+.header__adminInfo__wrap{
+  display: flex;
+}
+
+@media (min-width:0) and (max-width: 991.9px) {
+  .body {
+    width: 100%;
+  }
+
+  .header{
+    margin: 10px 0;
+    justify-content: space-around;
+  }
 }

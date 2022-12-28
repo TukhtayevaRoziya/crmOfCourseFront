@@ -5,7 +5,7 @@ import App from './App';
 
 test('should just test', () => {
   render(<App />)
-  screen.debug()
+  expect(screen.getByText(/Log in/i)).toBeInTheDocument()
 })
 
 

@@ -1,13 +1,13 @@
 import React, {FC} from 'react'
 import { useDispatch } from 'react-redux'
 import { Dropdown, MenuProps } from 'antd'
+import { NavLink } from 'react-router-dom';
 import { IoIosSettings, IoMdNotificationsOutline, IoIosLogOut } from 'react-icons/io'
 
 import { logout } from '../../redux/actions/authAction'
 import { RightAdminNavbar_Icons__PropsType } from '../../utility/types'
 
 import styles from './RightAdminNavbar.module.css'
-import { NavLink } from 'react-router-dom';
 
 const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) => {
   const items2: MenuProps['items'] = [
@@ -63,7 +63,7 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) 
   ]
 
   return (
-    <>
+    <div className={styles.wrap}>
         <div className={styles.header__icons + ' ' + styles.header__icons1}>
           <Dropdown menu={{ items: items2 }} placement="bottom">
             <IoMdNotificationsOutline />
@@ -74,7 +74,7 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) 
             <IoIosSettings />
           </Dropdown>
         </div>
-    </>
+    </div>
   )
 }
 

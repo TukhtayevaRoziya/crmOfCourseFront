@@ -6,7 +6,7 @@ import Info from './info/Info'
 
 const Home = () => {
   return (
-    <div style={{ width: 'calc(100% - 1px)' }}>
+    <div className='home_wrap'>
       <Info />
       <ChartBox />
       <SecondBlock/>
