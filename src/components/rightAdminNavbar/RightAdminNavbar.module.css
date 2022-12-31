@@ -75,10 +75,20 @@
 @media (min-width:0) and (max-width: 991.9px) {
   .body {
     width: 100%;
+    display: flex;
+  }
+
+  .block{
+    width: 30%;
+
   }
 
   .header{
     margin: 10px 0;
     justify-content: space-around;
+    height: 40%;
+  }
+  .header__icons1{
+    visibility: hidden;
   }
 }

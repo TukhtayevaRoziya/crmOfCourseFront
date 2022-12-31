@@ -39,3 +39,9 @@
   align-items: center;
   color: #fff;
 }
+
+@media screen and (max-width: 991.9px) {
+  .title{
+    /* width: 40%; */
+  }
+}
