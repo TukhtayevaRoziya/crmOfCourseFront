@@ -67,6 +67,11 @@
   display: flex;
 }
 
+.block{
+  width: 80%;
+  margin: 0 auto;
+}
+
 @media (min-width:0) and (max-width: 991.9px) {
   .body {
     width: 100%;

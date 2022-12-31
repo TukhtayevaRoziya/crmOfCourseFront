@@ -4,6 +4,7 @@ import api from '../../utility/api'
 import RightAdminNavbarIcons from './RightAdminNavbar_Icons'
 
 import styles from './RightAdminNavbar.module.css'
+import RightAdminNavbarBlock from './RightAdminNavbar_Block';
 
 const RightAdminNavbar = () => {
   const [data, setData] = useState({
@@ -21,7 +22,12 @@ const RightAdminNavbar = () => {
       setData(res.data[0])
     })
   }, [])
+console.log(data.image);
 
+if(!data){
+  return <h1>Wait...</h1>
+
+}
   return (
     <div className={styles.body}>
       <div className={styles.header}>
@@ -36,6 +42,9 @@ const RightAdminNavbar = () => {
         </div>
         <img className={styles.header__img} draggable={false} src={data.image} alt="" />
         </div>
+      </div>
+      <div className={styles.block}>
+        <RightAdminNavbarBlock/>
       </div>
     </div>
   )

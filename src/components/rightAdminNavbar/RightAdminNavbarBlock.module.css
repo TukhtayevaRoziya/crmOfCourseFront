@@ -1,0 +1,41 @@
+.wrap {
+  margin-top: 40px;
+}
+
+.wrap,
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  width: 100%;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+}
+
+.title h1 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #303972;
+}
+
+.title p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: #a098ae;
+}
+
+.title a {
+  background: #4d44b5;
+  padding: 5px 12px;
+  box-shadow: 0px 20px 50px rgba(191, 21, 108, 0.05);
+  border-radius: 40px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}

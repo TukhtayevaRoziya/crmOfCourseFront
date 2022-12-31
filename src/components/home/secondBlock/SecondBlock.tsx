@@ -11,7 +11,7 @@ const SecondBlock = () => {
       <div className={styles.block}>
         <Calendar />
       </div>
-      <div className={styles.block}><ChartBar/></div>
+      <div className={styles.block2}><ChartBar/></div>
     </div>
   )
 }

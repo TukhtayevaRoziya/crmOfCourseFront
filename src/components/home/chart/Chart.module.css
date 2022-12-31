@@ -14,3 +14,11 @@
 
   color: #303972;
 }
+
+@media screen and (max-width: 991.9px) {
+  .body{
+    
+    padding: 1rem;
+
+  }
+}

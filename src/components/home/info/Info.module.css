@@ -47,7 +47,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     grid-gap: 2rem;
-    padding: 40px;
+    padding: 2rem;
   }
 
   .block {
@@ -57,6 +57,16 @@
 
   .block__icon {
     margin: 0;
+    padding: 10px;
+    font-size: 25px;
+  }
+  .block__title{
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .block__text{
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 

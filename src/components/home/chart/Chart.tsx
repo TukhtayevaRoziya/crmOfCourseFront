@@ -14,6 +14,7 @@ import { Line } from 'react-chartjs-2'
 import api from './../../../utility/api'
 
 import styles from './Chart.module.css'
+import useWindowDimensions from '../../../utility/hooks'
 
 ChartJS.register(
   CategoryScale,
@@ -60,6 +61,8 @@ export function ChartBox() {
     })
   }, [])
 
+  const { width} = useWindowDimensions()
+
   var monthNames = [
     'January',
     'February',
@@ -78,7 +81,13 @@ export function ChartBox() {
   var today = new Date()
   var last5Months = []
 
-  for (var i = 0; i < 5; i++) {
+  var num;
+  if(width < 692){
+    num = 4
+  }else{
+    num = 5
+  }
+  for (var i = 0; i < num; i++) {
     last5Months.push(monthNames[today.getMonth() - i])
   }
 

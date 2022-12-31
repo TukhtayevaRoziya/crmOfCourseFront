@@ -42,7 +42,13 @@
         'n n'
         'n1 c';
   grid-template-columns: 1fr 10fr ;
-
+  }
+  .title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 44px;
+    color: #303972;
+    padding: 1rem 0 0;
   }
 }
 
