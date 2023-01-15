@@ -17,5 +17,19 @@
 @media (min-width: 0) and (max-width: 991.9px) {
   .body {
     flex-direction: column;
+    align-items: center;
+  }
+  .block,
+  .block2{
+    width: 100%;
+  }
+  .block2{
+    margin: 2rem 0;
+  }
+}
+
+@media (min-width: 0) and (max-width: 449.9px) {
+  .block2{
+    display: none;
   }
 }

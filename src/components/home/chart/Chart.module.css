@@ -1,7 +1,7 @@
 .body {
   background-color: #fff;
   border-radius: 20px;
-  padding: 32px ;
+  padding: 32px;
   margin-top: 3rem;
 }
 
@@ -16,9 +16,14 @@
 }
 
 @media screen and (max-width: 991.9px) {
-  .body{
-    
+  .body {
     padding: 1rem;
+    margin-top: 2rem;
+  }
+}
 
+@media (min-width: 0) and (max-width: 449.9px) {
+  .body{
+    display: none;
   }
 }

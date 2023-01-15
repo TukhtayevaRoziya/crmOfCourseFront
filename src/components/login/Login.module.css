@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
   height: 100vh;
   overflow: hidden;
 }
@@ -29,6 +29,7 @@
 
   color: #06152b;
   margin-bottom: 60px;
+  width: 100%;
 }
 
 .inp_group {

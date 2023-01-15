@@ -71,7 +71,8 @@ select {
 .e-bigger.e-small .e-calendar .e-content td.e-selected span.e-day,
 .e-calendar .e-content td.e-selected.e-focused-date span.e-day,
 .e-calendar .e-content td.e-selected span.e-day {
-  background-color: #4D44B5 !important;
+  background-color: #fb7d5b !important;
+  color: #fff !important;
 }
 
 .e-calendar .e-content td.e-selected.e-focused-date span.e-day[title*='Saturday'],
@@ -175,4 +176,10 @@ div > button {
 .grid-item18 > button:hover {
   color: black;
   cursor: pointer;
+}
+
+@media (min-width: 0) and (max-width: 991.9px) {
+  .calendar{
+    width: 100%;
+  }
 }

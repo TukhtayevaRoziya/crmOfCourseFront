@@ -88,11 +88,14 @@ export function ChartBox() {
     num = 5
   }
   for (var i = 0; i < num; i++) {
-    last5Months.push(monthNames[today.getMonth() - i])
+    console.log(today.getMonth() - i)
+    let dis = today.getMonth() - i
+    last5Months.push(
+      
+      monthNames[dis === -1 ? 11 : dis === -2 ? 10 : dis === -3 ? 9 : dis === -4 ? 8 : dis === -5 ? 7 : dis])
   }
 
   const getLastMonths = last5Months.reverse()
-
   const data = {
     labels: getLastMonths,
     datasets: [

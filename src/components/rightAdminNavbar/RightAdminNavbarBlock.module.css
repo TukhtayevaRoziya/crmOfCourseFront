@@ -40,8 +40,16 @@
   color: #fff;
 }
 
-@media screen and (max-width: 991.9px) {
-  .title{
-    /* width: 40%; */
+@media (min-width: 0) and (max-width: 991.9px) {
+  .wrap{
+    margin: 0;
+  }
+  .title h1{
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .title a{
+    margin-left: .7rem;
+
   }
 }

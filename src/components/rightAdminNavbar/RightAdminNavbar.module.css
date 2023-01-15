@@ -1,4 +1,4 @@
-.wrap{
+.wrap {
   display: flex;
 }
 
@@ -63,32 +63,44 @@
   object-fit: contain;
 }
 
-.header__adminInfo__wrap{
+.header__adminInfo__wrap {
   display: flex;
 }
 
-.block{
+.block {
   width: 80%;
   margin: 0 auto;
 }
 
-@media (min-width:0) and (max-width: 991.9px) {
+@media (min-width: 0) and (max-width: 991.9px) {
   .body {
     width: 100%;
     display: flex;
   }
 
-  .block{
-    width: 30%;
-
+  .block {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem 0 auto;
   }
 
-  .header{
+  .header {
     margin: 10px 0;
     justify-content: space-around;
     height: 40%;
   }
-  .header__icons1{
+  .header__icons1 {
     visibility: hidden;
+  }
+}
+
+@media (min-width: 0) and (max-width: 449.9px) {
+  .block {
+    display: none;
+  }
+  .body {
+    justify-content: flex-end;
+    padding-right: 1rem;
   }
 }
