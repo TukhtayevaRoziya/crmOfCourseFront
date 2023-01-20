@@ -23,6 +23,7 @@
 
 .tbody h3 {
   color: #4d44b5;
+  width: 10%;
 }
 
 .tbody h3,
@@ -57,4 +58,25 @@
 
 .tbody h6 {
   text-align: right;
+}
+
+.tbody svg {
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 1000.9px) {
+  .tbody h3,
+  .tbody__class {
+    display: none;
+  }
+  .tbody__student h2,
+  .tbody h6 {
+    font-size: 14px;
+  }
+  .tbody img {
+    width: 30px;
+    height: 30px;
+  }
 }

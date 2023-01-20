@@ -88,7 +88,6 @@ export function ChartBox() {
     num = 5
   }
   for (var i = 0; i < num; i++) {
-    console.log(today.getMonth() - i)
     let dis = today.getMonth() - i
     last5Months.push(
       
