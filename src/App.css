@@ -101,6 +101,7 @@
   min-width: 250px !important;
   flex: 0 0 250px !important;
   height: 100%;
+  grid-area: n1;
 }
 
 .ant-layout-content {

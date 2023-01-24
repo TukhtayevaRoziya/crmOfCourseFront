@@ -14,82 +14,76 @@ const MyPagination = () => {
   const [maxIndex, setMaxIndex] = useState(pageSize)
 
   const onChange: PaginationProps['onChange'] = (page) => {
-    console.log(page)
     setCurrent(page)
-      setMinIndex((page - 1) * pageSize)
-      setMaxIndex(page * pageSize)
-    
+    setMinIndex((page - 1) * pageSize)
+    setMaxIndex(page * pageSize)
   }
 
   const data = [
     {
       id: 1,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
-      fullName: '3333333333333Name and Surname',
+      fullName: '33333333333333 and Surname',
       class: 'VII 3',
       amount: '$ 50,036',
     },
     {
       id: 2,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
       fullName: 'Name and Surname',
       class: 'VII 3',
       amount: '$ 50,036',
     },
     {
       id: 3,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
       fullName: 'Name and Surname',
       class: 'VII 3',
       amount: '$ 50,036',
     },
     {
       id: 4,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
       fullName: 'Name and Surname',
       class: 'VII 3',
       amount: '$ 50,036',
     },
     {
       id: 5,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
       fullName: 'Name and Surname',
       class: 'VII 3',
       amount: '$ 50,036',
     },
     {
       id: 6,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
       fullName: 'Name and Surname',
       class: 'VII 3',
       amount: '$ 50,036',
     },
     {
       id: 7,
-      img:
-        'https://yt3.ggpht.com/VxCj3vvhudWs3ovMJXHbka3W05aSxFbBCbXZwpZ_WMVjNOy0D8pZLG5OGyRek_uAgKRQW4eE=s900-c-k-c0x00ffffff-no-rj',
       fullName: 'Name and Surname',
       class: 'VII 3333333333',
       amount: '$ 50,036',
     },
   ]
-
   const dataMap = data.map(
     (d, index) =>
       index >= minIndex &&
       index < maxIndex && (
-        <div className={styles.tbody} key={d.id}>
+        <div className={styles.tbody} key={index}>
           <div className={styles.tbody__student}>
-            <img src={d.img} alt="" />
-            <h2>{d.fullName}</h2>
+            <h1>{++index}.</h1>
+            <h2>
+              {window.innerWidth <= 800
+                ? d.fullName.split(' ', 1).toString().slice(0, 6) ===
+                  d.fullName.split(' ', 1).toString()
+                  ? d.fullName.split(' ', 1).toString()
+                  : d.fullName.split(' ', 1).toString().slice(0, 6) + '...'
+                : window.innerWidth <= 1400 
+                ? d.fullName.length > 15
+                ? d.fullName.slice(0, 14) + '...':  d.fullName
+                : d.fullName.length > 18
+                ? d.fullName.slice(0, 17) + '...' : d.fullName }
+            </h2>
           </div>
-          <h3>ID:{d.id}</h3>
+          <h3>ID:{d.id.toString().length > 8}</h3>
           <div className={styles.tbody__class}>
             <div>
               <h4>Class</h4>

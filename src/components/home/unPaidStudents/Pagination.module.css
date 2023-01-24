@@ -3,6 +3,16 @@
   display: flex;
   align-items: center;
 }
+.tbody__student{
+  width: 30%;
+}
+
+.tbody__student h2{
+  margin-left: 1rem !important;
+  text-align: left;
+  justify-content: left;
+
+}
 
 .tbody {
   justify-content: space-between;
@@ -39,6 +49,7 @@
 
 .tbody__class {
   display: flex;
+  width: 9%;
 }
 
 .tbody__class h4 {
@@ -78,5 +89,15 @@
   .tbody img {
     width: 30px;
     height: 30px;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1400.9px) {
+  .tbody h3,
+  .tbody__class {
+    display: none;
+  }
+  .tbody__student{
+    width: 45%;
   }
 }

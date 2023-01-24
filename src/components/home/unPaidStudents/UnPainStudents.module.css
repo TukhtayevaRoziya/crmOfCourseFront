@@ -14,3 +14,20 @@
   line-height: 36px;
   color: #303972;
 }
+
+@media screen and (max-width: 991.9px) {
+  .body{
+    padding: 20px;
+  }
+
+  .body h1{
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1400.9px) {
+  .body{
+    margin-top: 2rem;
+  }
+}

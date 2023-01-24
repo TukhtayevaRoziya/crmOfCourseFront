@@ -51,8 +51,8 @@ export const options = {
 
 export function ChartBox() {
   const [chartData, setChartData] = useState({
-    data1: [20, 40, 60],
-    data2: [40, 70, 10],
+    data1: [20, 40, 60, 70, 20, 30],
+    data2: [40, 70, 20, 30, 80, 40],
   })
 
   useEffect(() => {
