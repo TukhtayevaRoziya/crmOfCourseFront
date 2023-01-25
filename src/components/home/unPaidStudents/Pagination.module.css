@@ -77,6 +77,22 @@
   margin-left: 1rem;
 }
 
+.print_body{
+  padding: 1rem;
+}
+
+.print_body h1{
+  font-weight: bolder;
+  font-size: 30px;
+  text-align: center;
+}
+
+.print_body h2{
+  font-weight: bold;
+
+}
+
+
 @media screen and (max-width: 1000.9px) {
   .tbody h3,
   .tbody__class {

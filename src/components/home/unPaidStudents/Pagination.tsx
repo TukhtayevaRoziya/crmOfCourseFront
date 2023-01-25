@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef, useRef } from 'react'
 
 import type { PaginationProps } from 'antd'
 import { Pagination } from 'antd'
 import { AiOutlinePrinter } from 'react-icons/ai'
 import { BsThreeDots } from 'react-icons/bs'
+import ReactToPrint, { PrintContextConsumer } from 'react-to-print'
 
 import styles from './Pagination.module.css'
 
@@ -12,6 +13,7 @@ const MyPagination = () => {
   const [current, setCurrent] = useState(3)
   const [minIndex, setMinIndex] = useState(0)
   const [maxIndex, setMaxIndex] = useState(pageSize)
+  const ref = useRef<HTMLDivElement>(null)
 
   const onChange: PaginationProps['onChange'] = (page) => {
     setCurrent(page)
@@ -63,6 +65,21 @@ const MyPagination = () => {
       amount: '$ 50,036',
     },
   ]
+
+  type PrintType = {
+    data: { id: number; fullName: string; class: string; amount: string }
+  }
+
+  const ComponentToPrint = forwardRef((props: PrintType, ref: any) => {
+    return (
+      <div ref={ref} className={styles.print_body}>
+        <h1>Name Academy</h1>
+        <div>
+          <h2>Name: </h2>
+        </div>
+      </div>
+    )
+  })
   const dataMap = data.map(
     (d, index) =>
       index >= minIndex &&
@@ -76,11 +93,13 @@ const MyPagination = () => {
                   d.fullName.split(' ', 1).toString()
                   ? d.fullName.split(' ', 1).toString()
                   : d.fullName.split(' ', 1).toString().slice(0, 6) + '...'
-                : window.innerWidth <= 1400 
+                : window.innerWidth <= 1400
                 ? d.fullName.length > 15
-                ? d.fullName.slice(0, 14) + '...':  d.fullName
+                  ? d.fullName.slice(0, 14) + '...'
+                  : d.fullName
                 : d.fullName.length > 18
-                ? d.fullName.slice(0, 17) + '...' : d.fullName }
+                ? d.fullName.slice(0, 17) + '...'
+                : d.fullName}
             </h2>
           </div>
           <h3>ID:{d.id.toString().length > 8}</h3>
@@ -92,7 +111,18 @@ const MyPagination = () => {
           </div>
           <h6>{d.amount}</h6>
           <div>
-            <AiOutlinePrinter />
+            {/* @ts-ignore */}
+            <ReactToPrint content={() => ref.current}>
+              <PrintContextConsumer>
+                {({ handlePrint }) => (
+                  <AiOutlinePrinter onClick={handlePrint}></AiOutlinePrinter>
+                )}
+              </PrintContextConsumer>
+            </ReactToPrint>
+            <div style={{ display: 'none' }}>
+              {/* // eslint-disable-next-line no-sequences, no-sequences */}
+              <ComponentToPrint ref={ref} data={d} />
+            </div>
             <BsThreeDots />
           </div>
         </div>
