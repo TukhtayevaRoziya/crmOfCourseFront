@@ -138,6 +138,54 @@ body {
   width: 100% !important;
 }
 
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover {
+  background-color: transparent;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-prev button, :where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-next button{
+  color: #4D44B5;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-prev:hover .ant-pagination-item-link, :where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-next:hover .ant-pagination-item-link {
+  background-color: transparent !important;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item-active {
+  background-color: #4D44B5;
+  border: 2px solid #4D44B5 !important;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #A098AE;
+}
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item a{
+  color: #A098AE;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item-active a,
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item-active:hover a {
+  color: #fff;
+}
+
+:where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-prev .ant-pagination-item-link, :where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-next .ant-pagination-item-link{
+  display: flex;
+  align-items: center;
+}
+
+ul.ant-pagination.css-dev-only-do-not-override-26rdvq {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+
+  margin: 1rem 0;
+}
+
 .RightAdminNavbarIcons1 {
   border-bottom: 1px solid #a098ae;
   border-radius: 0 !important;

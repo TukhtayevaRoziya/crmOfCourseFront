@@ -50,7 +50,7 @@ const Sidebar: React.FC = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={[
-            win === '#/dashboard/students'
+            win === '#/dashboard/students/:id'
               ? '2'
               : win === '#/dashboard/teachers'
               ? '3'

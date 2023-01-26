@@ -3,15 +3,14 @@
   display: flex;
   align-items: center;
 }
-.tbody__student{
+.tbody__student {
   width: 30%;
 }
 
-.tbody__student h2{
+.tbody__student h2 {
   margin-left: 1rem !important;
   text-align: left;
   justify-content: left;
-
 }
 
 .tbody {
@@ -75,23 +74,72 @@
   font-size: 24px;
   cursor: pointer;
   margin-left: 1rem;
+  color: #a098ae;
 }
-
-.print_body{
+.print_body {
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.print_body .print_body__chWrap {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  flex-direction: inherit;
+  justify-content: flex-start;
+}
+.print_body div {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  padding: 0 1rem;
+  margin-top: .5rem;
+}
+.print_body .print_body__chWrap div:nth-child(2) {
+  justify-content: center;
+  border-right: 2px solid;
 }
 
-.print_body h1{
+.print_body .print_body__chWrap__title {
+  width: 100% ;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between ;
+}
+
+.print_body__chWrap__title h1,
+.print_body__chWrap__title h3 {
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 18px;
   text-align: center;
 }
 
-.print_body h2{
-  font-weight: bold;
-
+.print_body h3 {
+  padding: 0;
+  margin: 0.5rem 0;
+  font-size: 16px;
+  color: red;
 }
 
+.print_body h2 {
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 0;
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  margin-top: 0 !important;
+}
+
+.print_body h2,
+.print_body p {
+  margin-bottom: 1rem;
+  height: 20px;
+}
 
 @media screen and (max-width: 1000.9px) {
   .tbody h3,
@@ -113,7 +161,7 @@
   .tbody__class {
     display: none;
   }
-  .tbody__student{
+  .tbody__student {
     width: 45%;
   }
 }
