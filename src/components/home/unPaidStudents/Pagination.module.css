@@ -93,7 +93,7 @@
 }
 .print_body div {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 0 1rem;
   margin-top: .5rem;
@@ -102,7 +102,6 @@
   justify-content: center;
   border-right: 2px solid;
 }
-
 .print_body .print_body__chWrap__title {
   width: 100% ;
   display: flex;
