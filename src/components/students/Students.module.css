@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.tableTH{
+  background-color: #4d44b5
+}
+
 .tableTH,
 .dataWrap {
   justify-content: space-around;
@@ -31,12 +35,6 @@
   font-size: 20px;
 }
 
-.tableTH h1,
-.tableTH h2,
-.tableTH h3,
-.tableTH h4,
-.tableTH h5,
-.tableTH strong,
 .wrap strong,
 .wrap h2,
 .dataWrap h1,
