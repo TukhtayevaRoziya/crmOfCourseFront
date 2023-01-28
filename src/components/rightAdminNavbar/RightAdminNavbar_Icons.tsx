@@ -1,15 +1,21 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 import { useDispatch } from 'react-redux'
 import { Dropdown, MenuProps } from 'antd'
-import { NavLink } from 'react-router-dom';
-import { IoIosSettings, IoMdNotificationsOutline, IoIosLogOut } from 'react-icons/io'
+import { NavLink } from 'react-router-dom'
+import {
+  IoIosSettings,
+  IoMdNotificationsOutline,
+  IoIosLogOut,
+} from 'react-icons/io'
 
 import { logout } from '../../redux/actions/authAction'
 import { RightAdminNavbar_Icons__PropsType } from '../../utility/types'
 
 import styles from './RightAdminNavbar.module.css'
 
-const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) => {
+const RightAdminNavbarIcons: FC<RightAdminNavbar_Icons__PropsType> = (
+  data: any,
+) => {
   const items2: MenuProps['items'] = [
     {
       key: '1',
@@ -17,20 +23,20 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) 
     },
   ]
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const logoutHandler = () => {
-    dispatch<any>(logout());
-    localStorage.removeItem("token");
-  }  
+    dispatch<any>(logout())
+    localStorage.removeItem('token')
+  }
 
   const items: MenuProps['items'] = [
     {
       key: '1',
-      className:'RightAdminNavbarIcons1',
+      className: 'RightAdminNavbarIcons1',
       label: (
         <p>
           Signed in as
-          <br/>
+          <br />
           <strong>
             {data.data.name} {data.data.surname}
           </strong>
@@ -39,23 +45,15 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) 
     },
     {
       key: '2',
-      
-      label: (
-        <NavLink
-          to="settings"
-        >
-          Settings
-        </NavLink>
-      ),
+
+      label: <NavLink to="settings">Settings</NavLink>,
     },
     {
       key: '3',
-      className:'RightAdminNavbarIcons3',
+      className: 'RightAdminNavbarIcons3',
 
       label: (
-        <div
-          onClick={logoutHandler}
-        >
+        <div onClick={logoutHandler}>
           Logout <IoIosLogOut />
         </div>
       ),
@@ -64,16 +62,16 @@ const RightAdminNavbarIcons:FC<RightAdminNavbar_Icons__PropsType> = (data: any) 
 
   return (
     <div className={styles.wrap}>
-        <div className={styles.header__icons + ' ' + styles.header__icons1}>
-          <Dropdown menu={{ items: items2 }} placement="bottom">
-            <IoMdNotificationsOutline />
-          </Dropdown>
-        </div>
-        <div className={styles.header__icons}>
-          <Dropdown menu={{ items }} placement="bottom">
-            <IoIosSettings />
-          </Dropdown>
-        </div>
+      <div className={styles.header__icons + ' ' + styles.header__icons1}>
+        <Dropdown menu={{ items: items2 }} placement="bottom">
+          <IoMdNotificationsOutline />
+        </Dropdown>
+      </div>
+      <div className={styles.header__icons}>
+        <Dropdown menu={{ items }} placement="bottom">
+          <IoIosSettings />
+        </Dropdown>
+      </div>
     </div>
   )
 }

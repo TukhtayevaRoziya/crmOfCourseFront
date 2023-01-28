@@ -19,7 +19,7 @@ const login = (body: BodyType): AppThunk  => async (dispatch) => {
     })
     dispatch(checkToken(3600))
   } catch (err) {
-    console.log(err)
+    alert(err)
     dispatch({
       type: LOGIN_FAIL,
     })

@@ -43,7 +43,6 @@ const Login = () => {
         <div className={styles.mainPart__Login}>
           <h1>
             <span style={{ color: '#297D3B' }}> IN </span> BUSINESS
-            {/* <button onClick={btn}>btn</button> */}
           </h1>
           <h2>Log in</h2>
           <div className={styles.inp_group}>

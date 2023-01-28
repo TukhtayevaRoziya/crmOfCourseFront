@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useRef } from 'react'
+import React, { useState, forwardRef, useRef, useEffect } from 'react'
 
 import type { PaginationProps } from 'antd'
 import { Pagination } from 'antd'
@@ -8,24 +8,35 @@ import ReactToPrint, { PrintContextConsumer } from 'react-to-print'
 
 import styles from './Pagination.module.css'
 import { NavLink } from 'react-router-dom'
-
+import api from '../../../utility/api'
+export type StudentType = {
+  id: number
+  fullName: string
+  class: string
+  amount: string
+  payment?: boolean
+}
 const MyPagination = () => {
-  type PrintType = {
-    id: number
-    fullName: string
-    class: string
-    amount: string
-  }
   const pageSize = 5
+  const [data, setData] = useState([])
   const [current, setCurrent] = useState(1)
   const [minIndex, setMinIndex] = useState(0)
   const [maxIndex, setMaxIndex] = useState(pageSize)
-  const [value, setValue] = useState<PrintType>({
+  const [value, setValue] = useState<StudentType>({
     id: 0,
     fullName: 'Undefined',
     class: 'undefined',
     amount: 'undefined',
+    
   })
+
+  useEffect(() => {
+    api.get('/students/unpaid').then((res)=>{
+      setData(res.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }, [])
 
   const ref = useRef<HTMLDivElement>(null)
 
@@ -35,70 +46,7 @@ const MyPagination = () => {
     setMaxIndex(page * pageSize)
   }
 
-  const data = [
-    {
-      id: 1,
-      fullName: 'Tukhtayeva Roziya',
-      class: 'VII 3',
-      amount: '$ 30,036',
-    },
-    {
-      id: 2,
-      fullName: 'Alex Alex',
-      class: 'VII 4',
-      amount: '$ 60,036',
-    },
-    {
-      id: 3,
-      fullName: 'John Surname',
-      class: 'VII 8',
-      amount: '$ 90,036',
-    },
-    {
-      id: 4,
-      fullName: 'Falonchiyev Falonchi',
-      class: 'VII 1',
-      amount: '$ 10,036',
-    },
-    {
-      id: 5,
-      fullName: 'Alejandro Martín',
-      class: 'VII 9',
-      amount: '$ 50,980',
-    },
-    {
-      id: 6,
-      fullName: 'Agnieszka Murdoch',
-      class: 'VII 2',
-      amount: '$ 57,036',
-    },
-    {
-      id: 7,
-      fullName: 'Einar Montalvo',
-      class: 'VII 7',
-      amount: '$ 34,036',
-    },
-    {
-      id: 8,
-      fullName: 'Михаил Русаков',
-      class: 'VII 7',
-      amount: '$ 89,036',
-    },
-    {
-      id: 9,
-      fullName: 'Sarah Martín',
-      class: 'VII 7',
-      amount: '$ 56,036',
-    },
-    {
-      id: 10,
-      fullName: 'Михаил Montalvo',
-      class: 'VII 7',
-      amount: '$ 190,036',
-    },
-  ]
-
-  const ComponentToPrint = forwardRef((props: PrintType, ref: any) => {
+  const ComponentToPrint = forwardRef((props: StudentType, ref: any) => {
     return (
       <div ref={ref} className={styles.print_body}>
         <div className={styles.print_body__chWrap}>
@@ -124,7 +72,7 @@ const MyPagination = () => {
     )
   })
   const dataMap = data.map(
-    (d, index) =>
+    (d:StudentType, index:number) =>
       index >= minIndex &&
       index < maxIndex && (
         <div className={styles.tbody} key={index}>

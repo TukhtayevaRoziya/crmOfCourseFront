@@ -9,6 +9,7 @@ import Settings from './../settings/Settings';
 import Home from './../home/Home'
 
 import styles from './Sidebar.module.css'
+import AllStudents from '../students/AllStudents'
 
 const { Header, Content, Sider } = Layout
 
@@ -52,11 +53,11 @@ const Sidebar: React.FC = () => {
           defaultSelectedKeys={[
             win === '#/dashboard/students/:id'
               ? '2'
-              : win === '#/dashboard/teachers'
+              : win === '#/dashboard/teachers/*'
               ? '3'
-              : win === '#/dashboard/events'
+              : win === '#/dashboard/events/*'
               ? '4'
-              : win === '#/dashboard/settings'
+              : win === '#/dashboard/settings/*'
               ? '5'
               : '1',
           ]}
@@ -80,6 +81,7 @@ const Sidebar: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/settings" element={<Settings/>} />
+              <Route path="/students/*" element={<AllStudents/>} />
             </Routes>
           </div>
         </Content>
