@@ -173,6 +173,7 @@ body {
 
 :where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item-active a,
 li.ant-pagination-item.ant-pagination-item-1.ant-pagination-item-active a,
+li.ant-pagination-item.ant-pagination-item-2.ant-pagination-item-active a,
 :where(.css-dev-only-do-not-override-26rdvq).ant-pagination .ant-pagination-item-active:hover a {
   color: #fff;
 }
