@@ -9,6 +9,7 @@ import ReactToPrint, { PrintContextConsumer } from 'react-to-print'
 import styles from './Pagination.module.css'
 import { NavLink } from 'react-router-dom'
 import api from '../../../utility/api'
+import useWindowSize from '../../../utility/hooks'
 export type StudentType = {
   id: number
   fullName: string
@@ -29,6 +30,7 @@ const MyPagination = () => {
     amount: 'undefined',
     
   })
+  const { width } = useWindowSize()
 
   useEffect(() => {
     api.get('/students/unpaid').then((res)=>{
@@ -79,12 +81,12 @@ const MyPagination = () => {
           <div className={styles.tbody__student}>
             <h1>{++index}.</h1>
             <h2 className={styles.tbody__student_h2}>
-              {window.innerWidth <= 800
+              {width <= 800
                 ? d.fullName.split(' ', 1).toString().slice(0, 6) ===
                   d.fullName.split(' ', 1).toString()
                   ? d.fullName.split(' ', 1).toString()
                   : d.fullName.split(' ', 1).toString().slice(0, 6) + '...'
-                : window.innerWidth <= 1400
+                : width <= 1400
                 ? d.fullName.length > 15
                   ? d.fullName.slice(0, 14) + '...'
                   : d.fullName

@@ -14,7 +14,7 @@ import { Line } from 'react-chartjs-2'
 import api from './../../../utility/api'
 
 import styles from './Chart.module.css'
-import useWindowDimensions from '../../../utility/hooks'
+import useWindowSize from '../../../utility/hooks'
 
 ChartJS.register(
   CategoryScale,
@@ -61,7 +61,7 @@ export function ChartBox() {
     })
   }, [])
 
-  const { width} = useWindowDimensions()
+  const { width } = useWindowSize()
 
   var monthNames = [
     'January',
@@ -81,17 +81,29 @@ export function ChartBox() {
   var today = new Date()
   var last5Months = []
 
-  var num;
-  if(width < 692){
+  var num
+  if (width < 692) {
     num = 4
-  }else{
+  } else {
     num = 5
   }
   for (var i = 0; i < num; i++) {
     let dis = today.getMonth() - i
     last5Months.push(
-      
-      monthNames[dis === -1 ? 11 : dis === -2 ? 10 : dis === -3 ? 9 : dis === -4 ? 8 : dis === -5 ? 7 : dis])
+      monthNames[
+        dis === -1
+          ? 11
+          : dis === -2
+          ? 10
+          : dis === -3
+          ? 9
+          : dis === -4
+          ? 8
+          : dis === -5
+          ? 7
+          : dis
+      ],
+    )
   }
 
   const getLastMonths = last5Months.reverse()
@@ -126,7 +138,7 @@ export function ChartBox() {
   return (
     <div className={styles.body}>
       <h1 className={styles.title}>School Performance</h1>
-      <Line style={{width: '100%'}} options={options} data={data} />
+      <Line style={{ width: '100%' }} options={options} data={data} />
     </div>
   )
 }

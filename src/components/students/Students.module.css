@@ -9,21 +9,31 @@
   flex-direction: column;
 }
 
-.tableTH{
-  background-color: #4d44b5
+.tableTH {
+  align-items: center;
 }
 
 .tableTH,
 .dataWrap {
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .wrap strong,
 .wrap h2 {
-  width: 8%;
+  width: 10%;
   border-radius: 0;
-  justify-content: flex-start;
+  justify-content: center;
 }
+
+.wrap strong,
+.wrap h2,
+.wrap h3,
+.wrap h4,
+.wrap h5,
+.dataWrap button {
+  text-align: center;
+}
+
 .tableTH h1,
 .tableTH h2,
 .tableTH h3,
@@ -37,12 +47,14 @@
 
 .wrap strong,
 .wrap h2,
+.wrap h1,
+.wrap h3,
+.wrap h4,
 .dataWrap h1,
 .dataWrap h2,
 .dataWrap h3,
 .dataWrap h4 {
   padding: 0.5rem 0;
-  margin-left: 1.5rem;
   border-right: 2px solid #303972;
 }
 
@@ -52,9 +64,11 @@
 .tableTH h4,
 .tableTH h5,
 .tableTH strong {
-  color: #303972;
+  color: #fff;
   font-weight: 700;
   line-height: 30px;
+  background-color: #4d44b5;
+  border-right: 2px solid;
 }
 .dataWrap h1,
 .dataWrap h2,
@@ -66,21 +80,30 @@
 }
 
 .wrap h1 {
-  width: 30%;
+  width: 35%;
+}
+
+.wrap h1 {
+  padding-left: 1rem;
+}
+
+.tableTH strong {
+  border-top-left-radius: 10px;
 }
 
 .wrap h3,
 .wrap h4,
 .tableTH h5,
 .dataWrap button {
-  width: 10%;
+  width: 15%;
 }
 
 .tableTH h5,
 .dataWrap button {
   margin: 0;
   border-right: none !important;
-  margin-left: 1.5rem;
+  padding: 0.5rem 0;
+  border-top-right-radius: 10px;
 }
 
 .dataWrap button {
@@ -88,7 +111,7 @@
   border: none;
   font-weight: 500;
   font-size: 19px;
-  text-align: left;
+  border-top-right-radius: 10px;
 }
 
 .dataWrap .noPaid {
@@ -99,18 +122,18 @@
   color: #303972;
 }
 
-.search{
+.search {
   margin-bottom: 1rem;
 }
 
-.search input{
+.search input {
   width: 90%;
   outline: none;
   padding: 1rem;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
-.search button{
+.search button {
   width: 10%;
   margin: 0;
   outline: none;
@@ -121,4 +144,88 @@
   border-bottom-right-radius: 10px;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 992.9px) {
+  .wrap{
+    width: 90%;
+    
+  }
+}
+
+@media screen and (max-width: 900.9px) {
+  .wrap {
+    width: 90%;
+  }
+  .search input {
+    width: 80%;
+    padding: 0.7rem;
+  }
+  .search button {
+    width: 20%;
+  }
+  .tableTH h1,
+  .tableTH h2,
+  .tableTH h3,
+  .tableTH h4,
+  .tableTH h5,
+  .search button,
+  .search input,
+  .tableTH strong,
+  .wrap strong,
+  .wrap h2,
+  .dataWrap h1,
+  .dataWrap h2,
+  .dataWrap h3,
+  .dataWrap button,
+  .dataWrap h4 {
+    font-size: 14px;
+  }
+  .wrap h3,
+  .wrap h4,
+  .tableTH h5,
+  .dataWrap button {
+    width: 17%;
+  }
+  .wrap h1 {
+    width: 25%;
+  }
+  .wrap strong,
+  .wrap h2 {
+    width: 13%;
+  }
+}
+
+@media screen and (max-width: 600.9px) {
+  .wrap strong {
+    display: none;
+  }
+  .wrap h3 {
+    width: 20%;
+  }
+  .wrap h4{
+    width: 23%;
+  }
+   .wrap h2 {
+    width: 15%;
+  }
+  .tableTH h1,
+  .tableTH h2,
+  .tableTH h3,
+  .tableTH h4,
+  .tableTH h5,
+  .search button,
+  .search input,
+  .tableTH strong,
+  .wrap strong,
+  .wrap h2,
+  .dataWrap h1,
+  .dataWrap h2,
+  .dataWrap h3,
+  .dataWrap button,
+  .dataWrap h4 {
+    font-size: 12px;
+    padding-left: .5rem;
+
+  }
 }
