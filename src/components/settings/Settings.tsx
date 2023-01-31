@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 
 import api from '../../utility/api';
 import styles from './Settings.module.css'
@@ -12,7 +12,7 @@ type AdminData = {
 }
 
 const Settings = () => {
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
   useEffect(() => {
     api.get('/').then((res:AdminData)=>{
       console.log(res.data)
