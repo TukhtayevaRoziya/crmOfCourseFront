@@ -1,4 +1,37 @@
 .body{
   width: 100%;
-  border: 2px solid firebrick;
+}
+
+.img_back{
+  width: 100%;
+  background-color: rgb(77 68 180 / 50%);
+  border-top-left-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+  position: relative;
+  height: 180px; 
+
+}
+
+.img_back img{
+  position: absolute;
+  width: 250px !important;
+  height: 250px !important; 
+  object-fit: fill;
+  border-radius: 50%;
+  border: 4px solid rgb(255, 255, 255);
+  left: 24px;
+  top: 24px;
+  background-color: #000;
+}
+
+.block{
+  margin-top: calc((250px -  180px) + 3rem);
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block svg{
+  cursor: pointer;
 }
