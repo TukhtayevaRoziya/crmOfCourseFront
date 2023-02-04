@@ -10,6 +10,7 @@ import Home from './../home/Home'
 
 import styles from './Sidebar.module.css'
 import AllStudents from '../students/AllStudents'
+import NewStudent from '../students/NewStudent'
 
 const { Header, Content, Sider } = Layout
 
@@ -70,7 +71,16 @@ const Sidebar: React.FC = () => {
           className="site-layout-sub-header-background"
           style={{ padding: 0, width: 'calc(100% - 1px)' }}
         >
-          <h1 className={styles.title}>Dashboard</h1>
+          <h1 className={styles.title}>{ win === '#/dashboard/students/:id'
+              ? 'Students'
+              : win === '#/dashboard/teachers/*'
+              ? 'Teachers'
+              : win === '#/dashboard/events/*'
+              ? 'Events'
+              : win === '#/dashboard/settings/*'
+              ? 'Settings'
+              : 'Dashboard'
+              }</h1>
         </Header>
         <Content style={{ margin: '24px 16px 0' }}>
           <div
@@ -82,6 +92,7 @@ const Sidebar: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/settings" element={<Settings/>} />
               <Route path="/students/*" element={<AllStudents/>} />
+              <Route path="/students/add" element={<NewStudent />} />
             </Routes>
           </div>
         </Content>

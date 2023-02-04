@@ -33,7 +33,7 @@ const RightAdminNavbar = () => {
         <div className={styles.header__adminInfo__wrap}>
           <div className={styles.header__adminInfo}>
             <h1>
-              {data?.name} {data?.surname[0]}.
+              {data.name} {data.surname}.
             </h1>
             <p>Admin</p>
           </div>

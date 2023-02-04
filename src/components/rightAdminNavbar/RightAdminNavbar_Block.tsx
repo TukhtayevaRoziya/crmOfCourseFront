@@ -21,7 +21,7 @@ const RightAdminNavbarBlock = () => {
             You have <strong> {data} </strong> students
           </p>
         </div>
-        <NavLink to={'students'}>+</NavLink>
+        <NavLink to={'students/add'}>+</NavLink>
       </div>
     </div>
   )
