@@ -9,15 +9,13 @@ import RightAdminNavbarBlock from "./RightAdminNavbar_Block";
 const RightAdminNavbar = () => {
   const [data, setData] = useState({
     name: "Undefined",
-    surname: "Undefined",
-    image:
-      "https://www.kindpng.com/picc/m/247-2472302_admin-transparent-background-admin-icon-hd-png-download.png",
+    surname: "Undefined"
   });
 
   useEffect(() => {
     api.get("/").then((res) => {
       if (res.data) {
-        setData(res.data);
+        setData(res.data[0]);
       }
     });
   }, []);
@@ -33,15 +31,13 @@ const RightAdminNavbar = () => {
         <div className={styles.header__adminInfo__wrap}>
           <div className={styles.header__adminInfo}>
             <h1>
-              {data.name} {data.surname}.
+              {data.name} {data.surname[0]}.
             </h1>
             <p>Admin</p>
           </div>
-          <img
+          <div
             className={styles.header__img}
             draggable={false}
-            src={data.image}
-            alt=""
           />
         </div>
       </div>

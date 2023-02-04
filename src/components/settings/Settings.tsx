@@ -4,6 +4,8 @@ import { BiMap, BiPhone, BiSave } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
 
 import api from "../../utility/api";
+import useWindowSize from "../../utility/hooks";
+
 import styles from "./Settings.module.css";
 
 type DataType = {
@@ -33,16 +35,16 @@ const Settings = () => {
   const [email, setEmail] = useState("");
 
   const [show, setShow] = useState(false);
+  const { width } = useWindowSize()
 
   useEffect(() => {
     api.get("/").then((res) => {
-      setData(res.data);
+      setData(res.data[0]);
       setStr(data.name + " " + data.surname);
       setPlace(data.place);
       setTel(data.tel);
       setEmail(data.email);
     });
-    console.log(show);
   }, [data.email, data.name, data.place, data.surname, data.tel, show]);
 
   const data3 = {
@@ -123,7 +125,7 @@ const Settings = () => {
               <AiOutlineMail />
             </h4>
             {!show ? (
-              <h5>{email}</h5>
+              <h5>{width > 880 || width < 430  ? email.length > 15 ? email.slice(0, 15) + '...' : email : email}</h5>
             ) : (
               <input
                 value={email}

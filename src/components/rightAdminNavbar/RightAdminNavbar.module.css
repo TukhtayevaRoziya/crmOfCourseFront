@@ -24,12 +24,15 @@
 }
 
 .header__icons1 {
-  margin-right: 20px;
+  margin-right: .7rem;
 }
 
 .header__adminInfo {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  margin-left: 0.3rem;
+
 }
 
 .header__adminInfo h1 {
@@ -61,6 +64,9 @@
   height: 40px;
   border-radius: 50%;
   object-fit: contain;
+  background-color: #c1bbeb;
+  margin-left: 1rem;
+
 }
 
 .header__adminInfo__wrap {
@@ -73,6 +79,9 @@
 }
 
 @media (min-width: 0) and (max-width: 991.9px) {
+  .wrap{
+    margin-left: 1rem;
+  }
   .block {
     width: 40%;
     display: flex;
@@ -94,6 +103,12 @@
     display: flex;
     width: 100%;
     align-items: center;
+  }
+  .header__img{
+    display: none;
+  }
+  .header__adminInfo{
+    align-items: flex-start;
   }
 }
 

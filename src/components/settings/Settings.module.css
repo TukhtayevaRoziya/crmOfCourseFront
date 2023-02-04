@@ -35,18 +35,20 @@
   padding: 0 24px;
 }
 
-.block input{
+.block input {
   width: 100%;
-  background: #FFFFFF;
-  border: 2px solid #C1BBEB;
+  background: #ffffff;
+  border: 2px solid #c1bbeb;
   border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  color: #A098AE;
+  color: rgb(77 68 181 / 90%);
   padding: 10px;
+  font-weight: 600;
+  outline: none;
 }
 
 .block h1 {
@@ -103,7 +105,7 @@
 }
 
 .second_b {
-  width: 25%;
+  width: 30%;
 }
 
 .second_b div {
@@ -118,7 +120,7 @@
   font-size: 18px;
   line-height: 27px;
   color: #a098ae;
-  margin-bottom: 1rem;
+  margin: 8px 0;
 }
 
 .second_b h5 {
@@ -132,7 +134,7 @@
 }
 
 .second_b h4 {
-  background-color: #303972;
+  background-color: #fb7d5b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,23 +144,56 @@
   border-radius: 50%;
 }
 
-.one{
-  width: 50%;
+.one {
+  width: 30%;
+}
+
+.second_b input {
+  margin-left: 0.5rem;
 }
 
 @media screen and (max-width: 880.9px) {
   .block {
     display: grid;
-    grid-template-areas: "d d" 't e';
+    grid-template-areas: "d d" "t e";
+    grid-template-columns: 1fr 1fr;
   }
-  .first_b{
+  .first_b {
     grid-area: d;
   }
-  .two{
+  .second_b {
+    margin-top: 0.5rem;
+  }
+  .one,
+  .first_b {
+    width: 100%;
+  }
+  .two {
     grid-area: t;
   }
-  .three{
+  .three {
     grid-area: e;
+  }
+
+  .img_back div {
+    width: 130px !important;
+    height: 130px !important;
+  }
+  .img_back {
+    height: 130px;
+  }
+  .block h1 {
+    font-size: 25px;
+  }
+
+  .second_b h5 {
+    margin-left: 0.5rem;
+  }
+  .second_b h5,
+  .second_b h3,
+  .first_b h2,
+  .first_b p {
+    font-size: 16px;
   }
 }
 
@@ -167,4 +202,28 @@
     width: 95%;
     margin-right: auto;
   }
+}
+
+@media screen and (max-width: 710px) {
+  .block {
+    display: grid;
+    grid-template-areas: "d" "t" "e";
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+  .img_back {
+    height: 90px;
+    background-size: cover;
+    background-position: top right;
+    border-top-left-radius: 10px;
+  }
+  .img_back div {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .dot{
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 710px) {
 }

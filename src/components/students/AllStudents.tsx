@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Pagination, PaginationProps } from "antd";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 import api from "../../utility/api";
 import { StudentType } from "../home/unPaidStudents/Pagination";
@@ -104,7 +104,10 @@ const AllStudents = () => {
           />
           <button onClick={onClick}>Search</button>
         </form>
-          <NavLink to={'/dashboard/students/add'} className={styles.add}>+ Add Student</NavLink>
+        <NavLink to={"/dashboard/students/add"} className={styles.add}>
+          +
+          New Student
+        </NavLink>
       </div>
 
       <div className={styles.tableTH}>

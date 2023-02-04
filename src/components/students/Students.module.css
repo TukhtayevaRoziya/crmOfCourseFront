@@ -150,6 +150,10 @@
   cursor: pointer;
 }
 
+.search_add_block a{
+  border-radius: 40px;
+}
+
 .search_add_block {
   display: flex;
   justify-content: space-between;
