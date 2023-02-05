@@ -161,9 +161,8 @@
 
 .add{
   width: auto !important;
-  padding: 0 1rem;
+  padding: 12px 25px;
   margin-bottom: 1rem !important;
-  
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   display: flex;

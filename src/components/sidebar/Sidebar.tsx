@@ -1,33 +1,34 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { NavLink, Route, Routes } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+import React from "react";
+import { useSelector } from "react-redux";
+import { NavLink, Route, Routes } from "react-router-dom";
+import { Layout, Menu } from "antd";
 
-import { InitialStateObjType } from '../../redux/reducers/sidebarReducer'
-import RightAdminNavbar from '../rightAdminNavbar/RightAdminNavbar'
-import Settings from './../settings/Settings';
-import Home from './../home/Home'
+import { InitialStateObjType } from "../../redux/reducers/sidebarReducer";
+import RightAdminNavbar from "../rightAdminNavbar/RightAdminNavbar";
+import AllStudents from "../students/AllStudents";
+import NewStudent from "../students/NewStudent";
+import Settings from "./../settings/Settings";
+import Teachers from "../teachers/Teachers";
+import Home from "./../home/Home";
 
-import styles from './Sidebar.module.css'
-import AllStudents from '../students/AllStudents'
-import NewStudent from '../students/NewStudent'
+import styles from "./Sidebar.module.css";
 
-const { Header, Content, Sider } = Layout
+const { Header, Content, Sider } = Layout;
 
 const Sidebar: React.FC = () => {
-  const data = useSelector((state: any) => state.sidebarReducer)
-  const win = window.location.hash
+  const data = useSelector((state: any) => state.sidebarReducer);
+  const win = window.location.hash;
 
   const dataMap = data.map((d: InitialStateObjType) => ({
     key: String(d.id),
     icon: React.createElement(d.icon),
-    label: <NavLink to={'/dashboard/' + d.path}>{d.label}</NavLink>,
-  }))
+    label: <NavLink to={"/dashboard/" + d.path}>{d.label}</NavLink>,
+  }));
 
   return (
-    <Layout  className={styles.mainWrap}>
+    <Layout className={styles.mainWrap}>
       <Sider
-      style={{grid: 'n1'}}
+        style={{ grid: "n1" }}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
@@ -36,9 +37,9 @@ const Sidebar: React.FC = () => {
         onCollapse={(collapsed, type) => {
           // console.log(collapsed, type)
           if (collapsed) {
-            document.getElementById('main')?.classList.remove('dark')
+            document.getElementById("main")?.classList.remove("dark");
           } else {
-            document.getElementById('main')?.classList.add('dark')
+            document.getElementById("main")?.classList.add("dark");
           }
         }}
       >
@@ -52,55 +53,57 @@ const Sidebar: React.FC = () => {
           theme="dark"
           mode="inline"
           defaultSelectedKeys={[
-            win === '#/dashboard/students/:id'
-              ? '2'
-              : win === '#/dashboard/teachers/*'
-              ? '3'
-              : win === '#/dashboard/events/*'
-              ? '4'
-              : win === '#/dashboard/settings/*'
-              ? '5'
-              : '1',
+            win === "#/dashboard/students/:id"
+              ? "2"
+              : win === "#/dashboard/teachers/*"
+              ? "3"
+              : win === "#/dashboard/events/*"
+              ? "4"
+              : win === "#/dashboard/settings/*"
+              ? "5"
+              : "1",
           ]}
           items={dataMap}
         />
       </Sider>
-      <Layout style={{gridArea:'c', width:'calc(100% - 1px)'}}>
-        <div >
-        <Header
-          className="site-layout-sub-header-background"
-          style={{ padding: 0, width: 'calc(100% - 1px)' }}
-        >
-          <h1 className={styles.title}>{ win === '#/dashboard/students/:id'
-              ? 'Students'
-              : win === '#/dashboard/teachers/*'
-              ? 'Teachers'
-              : win === '#/dashboard/events/*'
-              ? 'Events'
-              : win === '#/dashboard/settings/*'
-              ? 'Settings'
-              : 'Dashboard'
-              }</h1>
-        </Header>
-        <Content style={{ margin: '24px 16px 0' }}>
-          <div
-            className="site-layout-background "
-            id="main"
-            style={{ padding: 24, minHeight: 360 }}
+      <Layout style={{ gridArea: "c", width: "calc(100% - 1px)" }}>
+        <div>
+          <Header
+            className="site-layout-sub-header-background"
+            style={{ padding: 0, width: "calc(100% - 1px)" }}
           >
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/settings" element={<Settings/>} />
-              <Route path="/students/*" element={<AllStudents/>} />
-              <Route path="/students/add" element={<NewStudent />} />
-            </Routes>
-          </div>
-        </Content>
+            <h1 className={styles.title}>
+              {win === "#/dashboard/students/:id"
+                ? "Students"
+                : win === "#/dashboard/teachers/*"
+                ? "Teachers"
+                : win === "#/dashboard/events/*"
+                ? "Events"
+                : win === "#/dashboard/settings/*"
+                ? "Settings"
+                : "Dashboard"}
+            </h1>
+          </Header>
+          <Content style={{ margin: "24px 16px 0" }}>
+            <div
+              className="site-layout-background "
+              id="main"
+              style={{ padding: 24, minHeight: 360 }}
+            >
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/students/*" element={<AllStudents />} />
+                <Route path="/students/add" element={<NewStudent />} />
+                <Route path="/teachers" element={<Teachers />} />
+              </Routes>
+            </div>
+          </Content>
         </div>
       </Layout>
-        <RightAdminNavbar />
+      <RightAdminNavbar />
     </Layout>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
