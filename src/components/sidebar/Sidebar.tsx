@@ -6,12 +6,12 @@ import { Layout, Menu } from "antd";
 import { InitialStateObjType } from "../../redux/reducers/sidebarReducer";
 import RightAdminNavbar from "../rightAdminNavbar/RightAdminNavbar";
 import AllStudents from "../students/AllStudents";
-import NewStudent from "../students/NewStudent";
 import Settings from "./../settings/Settings";
 import Teachers from "../teachers/Teachers";
 import Home from "./../home/Home";
 
 import styles from "./Sidebar.module.css";
+import AddStudents from './../students/AddStudents';
 
 const { Header, Content, Sider } = Layout;
 
@@ -94,7 +94,7 @@ const Sidebar: React.FC = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/students/*" element={<AllStudents />} />
-                <Route path="/students/add" element={<NewStudent />} />
+                <Route path="/students/add" element={<AddStudents />} />
                 <Route path="/teachers" element={<Teachers />} />
               </Routes>
             </div>
