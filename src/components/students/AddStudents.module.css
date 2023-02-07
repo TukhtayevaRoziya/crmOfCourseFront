@@ -3,6 +3,7 @@
   flex-direction: column;
   background-color: #fff;
   padding-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .student_details h1 {
@@ -21,12 +22,13 @@
 .student_details main {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
-
+  padding: 0 2rem;
+  flex-wrap: wrap;
 }
 
 .student_details main .student_details_block {
-  width: 45%;
+  width: 49%;
+  margin-top: 1.5rem;
 }
 
 .student_details main h2 {
@@ -41,11 +43,51 @@
   width: 100%;
 }
 
-.student_details main .student_details_block input{
-  border: 1px solid #C1BBEB;
+.student_details main .student_details_block input {
+  border: 1px solid #c1bbeb;
   outline: none;
   border-radius: 5px;
-  margin-top: 1rem;
-  padding: .9rem;
+  margin-top: 0.5rem;
+  padding: 0.9rem;
   color: #2d2492;
+  width: 100%;
+}
+
+.student_details main .student_details_block div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.student_details main .student_details_block div input {
+  width: 48%;
+}
+
+.student_details main .student_details_block textarea {
+  background: #ffffff;
+
+  border: 1px solid #c1bbeb;
+  border-radius: 5px;
+  width: 100%;
+  height: 175px !important;
+  margin-top: 1rem;
+  padding: 15px;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  outline: none;
+  color: #2d2492;
+}
+
+.student_details main .student_details_block textarea::placeholder{
+  color: #a098ae;
+}
+
+@media (min-width: 0) and (max-width: 991.9px) {
+  .student_details{
+    width: 90%;
+    margin-right: auto;
+  }
 }
