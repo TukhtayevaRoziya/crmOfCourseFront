@@ -1,5 +1,6 @@
 .student_details {
   display: flex;
+  flex-direction: column;
   background-color: #fff;
   padding-bottom: 2rem;
 }
@@ -15,4 +16,36 @@
   line-height: 36px;
   color: #ffffff;
   padding: 12px 20px;
+}
+
+.student_details main {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+
+}
+
+.student_details main .student_details_block {
+  width: 45%;
+}
+
+.student_details main h2 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #303972;
+  text-align: right;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.student_details main .student_details_block input{
+  border: 1px solid #C1BBEB;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: .9rem;
+  color: #2d2492;
 }
