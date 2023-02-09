@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import useWindowSize from "./../../utility/hooks";
+// import useWindowSize from "./../../utility/hooks";
 import { useSelector } from "react-redux";
 
 import styles from "./AddStudents.module.css";
 import api from "./../../utility/api";
 
 const AddStudents = () => {
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
   const { token } = useSelector((state: any) => state.authReducer);
   const [data, setData] = useState({});
   const onSubmit = (props: any) => {
@@ -18,8 +18,8 @@ const AddStudents = () => {
     console.log(props.target[0].value);
   };
 
-  const text =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
+  // const text =
+  //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
   return (
     <div className={styles.wrap}>
       <div className={styles.student_details}>
@@ -74,13 +74,16 @@ const AddStudents = () => {
             className={
               styles.student_details_block +
               " " +
-              styles.student_details_block_text
+              styles.student_details_block_radio
             }
           >
-              <h2>Payments *</h2>
-            <input type={"radio"} name="toggle" placeholder="A1" required />
-            <input type={"radio"} name="toggle" placeholder="A1" required />
+            <h2>Payments *</h2>
+            <div>
+             <div><input type={"radio"} name="toggle" required /> Cash</div>  
+             <div><input type={"radio"} name="toggle" required /> Debit</div>  
+
             </div>
+          </div>
           <div
             className={
               styles.student_details_block + " " + styles.student_details__btn

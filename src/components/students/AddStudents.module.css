@@ -133,6 +133,17 @@
   margin-left: 1rem;
 }
 
+.student_details_block_radio div,
+.student_details_block_radio div div {
+  display: flex;
+}
+
+.student_details_block_radio div div {
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 0) and (max-width: 991.9px) {
   .student_details {
     width: 90%;
@@ -183,13 +194,12 @@
   .student_details {
     padding-bottom: 1rem;
   }
-  .student_details__btn button{
+  .student_details__btn button {
     font-size: 14px;
     line-height: 20px;
     padding: 7px 15px;
   }
   .student_details__btn button:nth-child(2) {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
-  
 }
