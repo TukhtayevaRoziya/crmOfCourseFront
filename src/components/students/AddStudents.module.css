@@ -20,20 +20,20 @@
   padding: 12px 20px;
 }
 
-.student_details main {
+.student_details form {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
   padding: 0 2rem;
+  align-items: flex-end;
 }
 
-.student_details main .student_details_block {
+.student_details form .student_details_block {
   width: 49%;
   margin-top: 1.5rem;
 }
 
-.student_details main h2 {
+.student_details form h2 {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -45,7 +45,7 @@
   width: 100%;
 }
 
-.student_details main .student_details_block input {
+.student_details form .student_details_block input {
   border: 1px solid #c1bbeb;
   outline: none;
   border-radius: 5px;
@@ -55,16 +55,16 @@
   width: 100%;
 }
 
-.student_details main .student_details_block div {
+.student_details form .student_details_block div {
   display: flex;
   justify-content: space-between;
 }
 
-.student_details main .student_details_block div input {
+.student_details form .student_details_block div input {
   width: 48%;
 }
 
-.student_details main .student_details_block textarea {
+.student_details form .student_details_block textarea {
   background: #ffffff;
 
   border: 1px solid #c1bbeb;
@@ -83,19 +83,18 @@
   color: #2d2492;
 }
 
-.student_details main .student_details_block textarea::placeholder {
+.student_details form .student_details_block textarea::placeholder {
   color: #a098ae;
 }
 
 .student_details__btn {
-  border: 2px solid firebrick;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.student_details__btn button{
-  border: 2px solid;
+.student_details__btn button {
+  border: 2px solid #4d44b5;
   border-radius: 40px;
   padding: 10px 24px;
   font-family: "Poppins", sans-serif;
@@ -104,29 +103,49 @@
   font-size: 18px;
   line-height: 27px;
 
-  color: #4d44b5;
   margin: 0;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
+.student_details__btn button:nth-child(2):hover,
 .student_details__btn button:first-child {
-  border-color: #4d44b5;
   background-color: transparent;
+  color: #4d44b5;
 }
 
+.student_details__btn button:nth-child(2):hover {
+  box-shadow: inset 0px 0px 5px #4d44b5;
+  border-color: #fff;
+}
+.student_details__btn button:first-child:hover {
+  box-shadow: 0px 0px 4px #4d44b5;
+  border-color: #fff;
+}
+
+.student_details__btn button:first-child:hover,
+.student_details__btn button:nth-child(2) {
+  background-color: #4d44b5;
+  color: #fff;
+}
+
+.student_details__btn button:nth-child(2) {
+  margin-left: 1rem;
+}
 
 @media (min-width: 0) and (max-width: 991.9px) {
   .student_details {
     width: 90%;
     margin-right: auto;
   }
-  .student_details main .student_details_block_text {
+  .student_details form .student_details_block_text,
+  .student_details form .student_details__btn {
     width: 100%;
   }
 }
 
 @media screen and (max-width: 800.9px) {
-  .student_details main .student_details_block {
+  .student_details form .student_details_block {
     width: 100%;
   }
   .student_details h1 {
@@ -136,32 +155,41 @@
 }
 
 @media screen and (max-width: 500.9px) {
-  .student_details main .student_details_block div {
+  .student_details form .student_details_block div {
     flex-direction: column;
   }
-  .student_details main .student_details_block div input {
+  .student_details form .student_details_block div input {
     width: 100%;
   }
-  .student_details main .student_details_block textarea,
-  .student_details main .student_details_block input {
+  .student_details form .student_details_block textarea,
+  .student_details form .student_details_block input {
     font-size: 12px;
     line-height: 18px;
     padding: 0.6rem;
   }
-  .student_details main .student_details_block textarea {
-    height: 120px !important;
+  .student_details form .student_details_block textarea {
+    height: 100px !important;
   }
-  .student_details main {
+  .student_details form {
     padding: 0 1rem;
   }
-  .student_details main .student_details_block {
+  .student_details form .student_details_block {
     margin-top: 1rem;
   }
-  .student_details main h2 {
+  .student_details form h2 {
     font-size: 14px;
     line-height: 20px;
   }
   .student_details {
     padding-bottom: 1rem;
   }
+  .student_details__btn button{
+    font-size: 14px;
+    line-height: 20px;
+    padding: 7px 15px;
+  }
+  .student_details__btn button:nth-child(2) {
+    margin-left: .5rem;
+  }
+  
 }
