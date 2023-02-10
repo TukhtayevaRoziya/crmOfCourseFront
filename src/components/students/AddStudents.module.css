@@ -25,7 +25,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 2rem;
-  align-items: flex-end;
+  align-items: stretch;
 }
 
 .student_details form .student_details_block {
@@ -55,13 +55,23 @@
   width: 100%;
 }
 
+.student_details
+  form
+  .student_details_block_radio
+  .student_details_block_radio_div {
+  margin-top: 0.5rem;
+  justify-content: flex-start;
+}
+
 .student_details form .student_details_block div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .student_details form .student_details_block div input {
   width: 48%;
+  margin-top: 0;
 }
 
 .student_details form .student_details_block textarea {
@@ -87,10 +97,11 @@
   color: #a098ae;
 }
 
-.student_details__btn {
+.student_details form .student_details__btn {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  width: 100%;
 }
 
 .student_details__btn button {
@@ -143,6 +154,10 @@
   justify-content: center;
   align-items: center;
 }
+.required input:required{
+  border: 2px solid red;
+  background-color: red !important;
+}
 
 @media (min-width: 0) and (max-width: 991.9px) {
   .student_details {
@@ -166,11 +181,29 @@
 }
 
 @media screen and (max-width: 500.9px) {
+  .student_details
+    form
+    .student_details_block_radio
+    .student_details_block_radio_div
+    div,
+  .student_details
+    form
+    .student_details_block_radio
+    .student_details_block_radio_div {
+    flex-direction: row;
+  }
+  .student_details
+    form
+    .student_details_block_radio
+    .student_details_block_radio_div input{
+      margin: 0;
+    }
   .student_details form .student_details_block div {
     flex-direction: column;
   }
   .student_details form .student_details_block div input {
     width: 100%;
+    margin-top: 0.5rem;
   }
   .student_details form .student_details_block textarea,
   .student_details form .student_details_block input {

@@ -8,15 +8,84 @@ import api from "./../../utility/api";
 const AddStudents = () => {
   // const { width } = useWindowSize();
   const { token } = useSelector((state: any) => state.authReducer);
-  const [data, setData] = useState({});
+  const [isRequired, setIsRequired] = useState("");
+  const [data, setData] = useState<any>([]);
   const onSubmit = (props: any) => {
     console.log(token);
     api.post("students/add", data).then((res) => {
       console.log(res.data);
     });
-    setData({ name: props.target[0].value });
+    setData({ name: props.target });
     console.log(props.target[0].value);
   };
+
+  const inValid = (err: any) => {
+    console.log(err);
+    setIsRequired(styles.required);
+  };
+
+  const inpData = [
+    { id: 0, title: "First Name", placeholder: "Samantha" },
+    { id: 1, title: "Last Name", placeholder: "William" },
+    {
+      id: 2,
+      title: "Date & Place of Birth ",
+      children: (
+        <div>
+          <input type={"date"} placeholder="02/24/1997" required />
+          <input type={"type"} placeholder="Jakarta" required />
+        </div>
+      ),
+    },
+    {
+      id: 3,
+      title: "Parent Name",
+      placeholder: "William",
+    },
+    {
+      id: 4,
+      title: "Email",
+      placeholder: "william@mail.com",
+      type: "email",
+    },
+    {
+      id: 5,
+      title: "Phone",
+      placeholder: "william@mail.com",
+      type: "tel",
+    },
+    {
+      id: 6,
+      title: "Class name",
+      placeholder: "A1",
+    },
+    {
+      id: 7,
+      title: "Payments",
+      placeholder: "A1",
+      class: styles.student_details_block_radio,
+      children: (
+        <div className={styles.student_details_block_radio_div}>
+          <div>
+            <input type={"radio"} name="toggle" required /> Cash
+          </div>
+          <div>
+            <input type={"radio"} name="toggle" required /> Debit
+          </div>
+        </div>
+      ),
+    },
+  ];
+
+  const mapInpData = inpData.map((i) => {
+    const name = data[i.id]?.value == '' ? isRequired : ''
+    console.log(data)
+    return(
+    <div className={styles.student_details_block + " " + i.class + ' ' + name} key={i.id}>
+      <h2>{i.title} *</h2>
+      {i.children ? i.children : <input placeholder={i.placeholder} required />}
+    </div>
+  )});
 
   // const text =
   //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
@@ -24,66 +93,8 @@ const AddStudents = () => {
     <div className={styles.wrap}>
       <div className={styles.student_details}>
         <h1>Student Details</h1>
-        <form onSubmit={onSubmit}>
-          <div className={styles.student_details_block}>
-            <h2>First Name *</h2>
-            <input placeholder="Samantha" required />
-          </div>
-          <div className={styles.student_details_block}>
-            <h2>Last Name *</h2>
-            <input placeholder="William" required />
-          </div>
-          <div className={styles.student_details_block}>
-            <h2>Date & Place of Birth *</h2>
-            <div>
-              <input type={"date"} placeholder="02/24/1997" required />
-              <input type={"type"} placeholder="Jakarta" required />
-            </div>
-          </div>
-          <div className={styles.student_details_block}>
-            <h2>Parent Name *</h2>
-            <input placeholder="William" required />
-          </div>
-          <div className={styles.student_details_block}>
-            <h2>Email *</h2>
-            <input type={"email"} placeholder="william@mail.com" required />
-          </div>
-          <div className={styles.student_details_block}>
-            <h2>Phone *</h2>
-            <input type={"tel"} placeholder="+1234567890" required />
-          </div>
-          <div
-            className={
-              styles.student_details_block +
-              " " +
-              styles.student_details_block_text
-            }
-          >
-            <h2>Class name *</h2>
-            <input type={"type"} placeholder="A1" required />
-
-            {/* <textarea
-              style={{ resize: "none" }}
-              maxLength={2000}
-              // minLength={100}
-              placeholder={width < 500 ? text.slice(0, 100) + "..." : text}
-              required
-            /> */}
-          </div>
-          <div
-            className={
-              styles.student_details_block +
-              " " +
-              styles.student_details_block_radio
-            }
-          >
-            <h2>Payments *</h2>
-            <div>
-             <div><input type={"radio"} name="toggle" required /> Cash</div>  
-             <div><input type={"radio"} name="toggle" required /> Debit</div>  
-
-            </div>
-          </div>
+        <form onSubmit={onSubmit} onInvalid={inValid}>
+          {mapInpData}
           <div
             className={
               styles.student_details_block + " " + styles.student_details__btn
