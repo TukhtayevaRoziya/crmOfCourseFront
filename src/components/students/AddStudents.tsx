@@ -1,27 +1,35 @@
-import React, { useState } from "react";
-// import useWindowSize from "./../../utility/hooks";
-import { useSelector } from "react-redux";
+import React, {useState} from "react";
 
 import styles from "./AddStudents.module.css";
 import api from "./../../utility/api";
 
 const AddStudents = () => {
-  // const { width } = useWindowSize();
-  const { token } = useSelector((state: any) => state.authReducer);
-  const [isRequired, setIsRequired] = useState("");
-  const [data, setData] = useState<any>([]);
-  const onSubmit = (props: any) => {
-    console.log(token);
-    api.post("students/add", data).then((res) => {
-      console.log(res.data);
+  // const { token } = useSelector((state: any) => state.authReducer);
+  // const { token } = useSelector((state: any) => state.authReducer);
+  const [leng, setLeng] = useState(0)
+  const onSubmit = ({ target }: any) => {
+    api.get("/students").then((res:any) => {
+      setLeng(res.data.length)
     });
-    setData({ name: props.target });
-    console.log(props.target[0].value);
-  };
-
-  const inValid = (err: any) => {
-    console.log(err);
-    setIsRequired(styles.required);
+    const data = {
+      name: target[0].value,
+      surname: target[1].value,
+      birthday: target[2].value,
+      place: target[3].value,
+      parentsName: target[4].value,
+      email: target[5].value,
+      tel: target[6].value,
+      className: target[7].value,
+      payment: target[8].checked,
+      id: leng+1,
+    };
+    api
+      .post("students/add", data, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   const inpData = [
@@ -51,13 +59,26 @@ const AddStudents = () => {
     {
       id: 5,
       title: "Phone",
-      placeholder: "william@mail.com",
+      placeholder: "+1234567890",
       type: "tel",
     },
     {
       id: 6,
       title: "Class name",
-      placeholder: "A1",
+      children: (
+        <select>
+          <option value="a1_">A1</option>
+          <option value="a1">A1(kids)</option>
+          <option value="a2_">A2</option>
+          <option value="a2">A2(kids)</option>
+          <option value="b1_">B1</option>
+          <option value="b1">B1(kids)</option>
+          <option value="b2_">B2</option>
+          <option value="b2">B2(kids)</option>
+          <option value="c1_">C1</option>
+          <option value="c2">C2(kids)</option>
+        </select>
+      ),
     },
     {
       id: 7,
@@ -68,9 +89,11 @@ const AddStudents = () => {
         <div className={styles.student_details_block_radio_div}>
           <div>
             <input type={"radio"} name="toggle" required /> Cash
+            <span className={styles.checkmark}></span>
           </div>
           <div>
             <input type={"radio"} name="toggle" required /> Debit
+            <span className={styles.checkmark}></span>
           </div>
         </div>
       ),
@@ -78,14 +101,21 @@ const AddStudents = () => {
   ];
 
   const mapInpData = inpData.map((i) => {
-    const name = data[i.id]?.value == '' ? isRequired : ''
-    console.log(data)
-    return(
-    <div className={styles.student_details_block + " " + i.class + ' ' + name} key={i.id}>
-      <h2>{i.title} *</h2>
-      {i.children ? i.children : <input placeholder={i.placeholder} required />}
-    </div>
-  )});
+    // const name = data[i.id]?.value === "" ? isRequired : "";
+    const cName = i.class ? i.class : "";
+    return (
+      <div className={styles.student_details_block + " " + cName} key={i.id}>
+        <h2>{i.title} *</h2>
+        {i.children ? (
+          i.children
+        ) : (
+          <>
+            <input placeholder={i.placeholder} required />
+          </>
+        )}
+      </div>
+    );
+  });
 
   // const text =
   //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
@@ -93,14 +123,14 @@ const AddStudents = () => {
     <div className={styles.wrap}>
       <div className={styles.student_details}>
         <h1>Student Details</h1>
-        <form onSubmit={onSubmit} onInvalid={inValid}>
+        <form onSubmit={onSubmit}>
           {mapInpData}
           <div
             className={
               styles.student_details_block + " " + styles.student_details__btn
             }
           >
-            <button>Save as Draft</button>
+            {/* <button>Save as Draft</button> */}
             <button>Submit</button>
           </div>
         </form>

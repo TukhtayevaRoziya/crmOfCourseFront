@@ -45,7 +45,8 @@
   width: 100%;
 }
 
-.student_details form .student_details_block input {
+.student_details form .student_details_block input,
+.student_details form .student_details_block select {
   border: 1px solid #c1bbeb;
   outline: none;
   border-radius: 5px;
@@ -53,6 +54,16 @@
   padding: 0.9rem;
   color: #2d2492;
   width: 100%;
+}
+
+.student_details form .student_details_block select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-position-x: 98%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .student_details
@@ -154,9 +165,20 @@
   justify-content: center;
   align-items: center;
 }
-.required input:required{
-  border: 2px solid red;
-  background-color: red !important;
+.wrap input[type="radio"] {
+  display: grid;
+  place-content: center;
+}
+.wrap input:before {
+  box-shadow: inset 0 0 0 0.4375em #00005c;
+}
+
+.wrap input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.required input:invalid {
+  color: red !important;
 }
 
 @media (min-width: 0) and (max-width: 991.9px) {
@@ -195,9 +217,10 @@
   .student_details
     form
     .student_details_block_radio
-    .student_details_block_radio_div input{
-      margin: 0;
-    }
+    .student_details_block_radio_div
+    input {
+    margin: 0;
+  }
   .student_details form .student_details_block div {
     flex-direction: column;
   }
