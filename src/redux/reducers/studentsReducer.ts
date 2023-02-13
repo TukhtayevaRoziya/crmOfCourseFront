@@ -17,11 +17,11 @@ export const studentsReducer = (state = initialState, action: any) => {
   switch (type) {
     case ALL_STUDENTS_GET:
       return {
-        allStudents: payload.student,
+        allStudents: payload,
       };
     case UNPAID_STUDENTS_GET:
       return {
-        unPaidStudents: payload.unpaid,
+        unPaidStudents: payload,
       };
 
     default:

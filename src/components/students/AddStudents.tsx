@@ -76,7 +76,7 @@ const AddStudents = () => {
           <option value="b2_">B2</option>
           <option value="b2">B2(kids)</option>
           <option value="c1_">C1</option>
-          <option value="c2">C2(kids)</option>
+          <option value="c1">C1(kids)</option>
         </select>
       ),
     },

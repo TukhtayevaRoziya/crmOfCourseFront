@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Pagination, PaginationProps } from "antd";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { StudentType } from "../home/unPaidStudents/Pagination";
 import useWindowSize from "../../utility/hooks";
 
 import styles from "./Students.module.css";
+import api from "../../utility/api";
+import { allStudent } from "../../redux/actions/studentsAction";
 
 const AllStudents = () => {
   const { width } = useWindowSize();
@@ -20,19 +22,30 @@ const AllStudents = () => {
   const [current, setCurrent] = useState(1);
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(pageSize);
-  const { data } = useSelector((state: any) => state.studentsReducer);
-  
-  useEffect(() => {
-      setData(data);
-      setData2(data);
-  }, [data]);
+  const { allStudents } = useSelector((state: any) => state.studentsReducer);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    api
+      .get("/students")
+      .then((res) => {
+        dispatch<any>(allStudent(res.data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setData2(allStudents);
+  }, [allStudents, dispatch]);
+
+  if (!allStudents) {
+    return <div>No Un Paid Students yet</div>;
+  }
   const onChange: PaginationProps["onChange"] = (page: any) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);
     setMaxIndex(page * pageSize);
   };
-  
+
   const onClick = () => {
     if (search) {
       const myData: StudentType[] = [];
@@ -45,7 +58,7 @@ const AllStudents = () => {
     } else setData(data2);
   };
 
-  const dataMap = data1.map(
+  const dataMap = allStudents.map(
     (d: StudentType, index: number) =>
       index >= minIndex &&
       index < maxIndex && (
@@ -53,8 +66,7 @@ const AllStudents = () => {
           <strong>{++index}.</strong>
           <h1>
             {width <= 800
-              ? d.name.slice(0, 6) ===
-                d.name.toString()
+              ? d.name.slice(0, 6) === d.name.toString()
                 ? d.name.toString()
                 : d.name.toString().slice(0, 6) + "..."
               : width <= 1400
@@ -66,8 +78,36 @@ const AllStudents = () => {
               : d.name}
           </h1>
           <h2>{d.id}</h2>
-          <h3>{d.className[d.className.length -1] === '_' ? d.className.slice(0,d.className.length -1) : 'K:' + d.className}</h3>
-          <h4>{d.amount}</h4>
+          <h3>
+            {d.className[d.className.length - 1] === "_"
+              ? d.className.slice(0, d.className.length - 1)
+              : "K:" + d.className}
+          </h3>
+          <h4>
+            {!d.amount
+              ? d.className == "a1_"
+                ? "150.000"
+                : d.className == "a1"
+                ? "170.000"
+                : d.className == "a2_"
+                ? "180.000"
+                : d.className == "a2"
+                ? "190.000"
+                : d.className == "b1_"
+                ? "190.000"
+                : d.className == "b1"
+                ? "200.000"
+                : d.className == "b2_"
+                ? "200.000"
+                : d.className == "b2"
+                ? "210.000"
+                : d.className == "c1_"
+                ? "210.000"
+                : d.className == "c1"
+                ? "220.000"
+                : ""
+              : ""}
+          </h4>
           {!d.payment ? (
             width <= 400 ? (
               <button className={styles.noPaid}>NO</button>
@@ -106,9 +146,7 @@ const AllStudents = () => {
           <button onClick={onClick}>Search</button>
         </form>
         <NavLink to={"/dashboard/students/add"} className={styles.add}>
-          +
-          {width > 770 ? ' New Student' : width < 570 ? ' ' : ' Student' }
-           
+          +{width > 770 ? " New Student" : width < 570 ? " " : " Student"}
         </NavLink>
       </div>
 
@@ -124,7 +162,7 @@ const AllStudents = () => {
       <Pagination
         current={current}
         onChange={onChange}
-        total={data1.length}
+        total={allStudents.length}
         pageSize={pageSize}
       />
     </div>

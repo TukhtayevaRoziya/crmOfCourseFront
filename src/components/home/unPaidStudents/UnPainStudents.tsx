@@ -11,6 +11,7 @@ const UnPainStudents = () => {
   const { unPaidStudents } = useSelector((state: any) => state.studentsReducer);
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     api
       .get("/students/unpaid")
@@ -21,7 +22,7 @@ const UnPainStudents = () => {
         console.log(err);
       });
   }, [dispatch]);
-  if (!unPaidStudents.length) {
+  if (!unPaidStudents) {
 
     return <div className={styles.error}>No Un Paid Students yet</div>;
   }

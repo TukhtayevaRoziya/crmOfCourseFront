@@ -46,11 +46,9 @@ const MyPagination = () => {
       });
   }, []);
   if (!data.length) {
-    console.log(data);
 
     return <div>No Un Paid Students yet</div>;
   }
-  console.log(data, !data.length);
 
   const onChange: PaginationProps["onChange"] = (page) => {
     setCurrent(page);
@@ -75,7 +73,9 @@ const MyPagination = () => {
           <div>
             <p>{props?.name}</p>
 
-            <p>{props?.className}</p>
+            <p>   {props.className[props.className.length - 1] === "_"
+                  ? props.className.slice(0, props.className.length - 1)
+                  : "Kids:" + props.className}</p>
             <p>{props?.amount}</p>
             <p>{props?.id}</p>
           </div>

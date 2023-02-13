@@ -11,15 +11,15 @@ import Teachers from "../teachers/Teachers";
 import Home from "./../home/Home";
 
 import styles from "./Sidebar.module.css";
-import AddStudents from "./../students/AddStudents";
+import AddStudents from './../students/AddStudents';
 
 const { Header, Content, Sider } = Layout;
 
 const Sidebar: React.FC = () => {
-  const { allStudents } = useSelector((state: any) => state.sidebarReducer);
+  const data = useSelector((state: any) => state.sidebarReducer);
   const win = window.location.hash;
 
-  const dataMap = allStudents.map((d: InitialStateObjType) => ({
+  const dataMap = data.map((d: InitialStateObjType) => ({
     key: String(d.id),
     icon: React.createElement(d.icon),
     label: <NavLink to={"/dashboard/" + d.path}>{d.label}</NavLink>,
