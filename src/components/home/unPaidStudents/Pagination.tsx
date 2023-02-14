@@ -149,7 +149,7 @@ const MyPagination = () => {
                   ref={ref}
                   id={value.id}
                   name={value.name}
-                  amount={value.amount}
+                  amount={value.amount} 
                   className={value.className}
                   surname={value.surname}
                   payment={value.payment}
