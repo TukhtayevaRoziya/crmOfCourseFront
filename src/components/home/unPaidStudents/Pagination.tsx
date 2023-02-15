@@ -155,7 +155,7 @@ const MyPagination = () => {
                   payment={value.payment}
                 />
               </div>
-            ) : null}
+            ) : null} 
 
             <NavLink to={"/dashboard/students"}>
               <BsThreeDots />
