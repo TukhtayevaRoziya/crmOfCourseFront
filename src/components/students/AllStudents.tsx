@@ -62,7 +62,7 @@ const AllStudents = () => {
     (d: StudentType, index: number) =>
       index >= minIndex &&
       index < maxIndex && (
-        <div key={d.id} className={styles.dataWrap}>
+        <div key={index} className={styles.dataWrap}>
           <strong>{++index}.</strong>
           <h1>
             {width <= 800
