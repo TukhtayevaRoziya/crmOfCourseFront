@@ -13,6 +13,7 @@ import Teachers from "../teachers/Teachers";
 import Home from "./../home/Home";
 
 import styles from "./Sidebar.module.css";
+import TeacherSingle from "../teachers/TeacherSingle";
 
 const { Header, Content, Sider } = Layout;
 
@@ -76,7 +77,7 @@ const Sidebar: React.FC = () => {
             <h1 className={styles.title}>
               {win === "#/dashboard/students/:id"
                 ? "Students"
-                : win === "#/dashboard/teachers/*"
+                : win === "#/dashboard/teachers/"
                 ? "Teachers"
                 : win === "#/dashboard/events/*"
                 ? "Events"
@@ -98,6 +99,7 @@ const Sidebar: React.FC = () => {
                 <Route path="/students/add" element={<AddStudents />} />
                 <Route path="/teachers/add" element={<AddTeacher />} />
                 <Route path="/teachers" element={<Teachers />} />
+                <Route path="/teachers/:id" element={<TeacherSingle />} />
               </Routes>
             </div>
           </Content>

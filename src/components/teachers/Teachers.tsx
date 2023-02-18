@@ -8,15 +8,16 @@ import { SlPhone } from "react-icons/sl";
 import { GoMail } from "react-icons/go";
 
 import useWindowSize from "../../utility/hooks";
-import { getAction } from './../../utility/api';
+import { getAction } from "./../../utility/api";
 
 import styles from "./Teachers.module.css";
-import { GET_ALL_TEACHER } from './../../redux/actions/types';
+import { GET_ALL_TEACHER } from "./../../redux/actions/types";
 import { useDispatch, useSelector } from "react-redux";
+import { TeacherDataType } from "../../utility/types";
 
 const Teachers = () => {
   const { width } = useWindowSize();
-  const { data } = useSelector((state:any) => state.teachersReducer);
+  const { data } = useSelector((state: any) => state.teachersReducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -34,27 +35,23 @@ const Teachers = () => {
     setMinIndex((page - 1) * pageSize);
     setMaxIndex(page * pageSize);
   };
-  type DataType = {
-    id: number
-    name: string
-    surname: string
-    profession: string
-    tel: string
-    email: string
-  }
 
-  if(!data.length){
-    return <h1>No Teachers yet</h1>
+  if (!data.length) {
+    return <h1>No Teachers yet</h1>;
   }
 
   const dataMap = data.map(
-    (d:DataType, index: number) =>
+    (d: TeacherDataType, index: number) =>
       index >= minIndex &&
       index < maxIndex && (
-        <div className={styles.block} key={index}>
+        <NavLink to={"" + d._id} className={styles.block} key={index}>
           <BsThreeDots />
           <div className={styles.img} />
-          <h1>{width < 1151 ? ` ${d.name} ${d.surname[0]}.` : ` ${d.name} ${d.surname}`}</h1>
+          <h1>
+            {width < 1151
+              ? ` ${d.name} ${d.surname[0]}.`
+              : ` ${d.name} ${d.surname}`}
+          </h1>
           <h2>{d.profession}</h2>
           <div className={styles.contact}>
             <a href={`tel:+${d.tel}`} type="tel">
@@ -64,7 +61,7 @@ const Teachers = () => {
               <GoMail />
             </a>
           </div>
-        </div>
+        </NavLink>
       )
   );
   return (

@@ -20,3 +20,18 @@ export type RightAdminNavbar_Icons__PropsType = {
   _id: number
   image:string
 }
+
+export type TeacherDataType = {
+  _id: string;
+  id: number;
+  name: string;
+  surname: string;
+  profession: string;
+  tel: string;
+  email: string;
+  place?: string;
+  university?: string;
+  degree?: string;
+  startWork?: string;
+  finishWork?: string;
+};
