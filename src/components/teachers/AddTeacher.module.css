@@ -1,9 +1,9 @@
-.wrap{
+.wrap {
   display: flex;
   flex-direction: column;
 }
 
-.wrap header{
+.wrap header {
   width: 100%;
   height: auto !important;
   color: #fff;
@@ -17,15 +17,54 @@
   padding: 12px 20px;
 }
 
-.wrap form{
+.wrap form {
   background-color: #fff;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-end;
 }
 
-.wrap form div{
+.wrap button {
+  background: #4d44b5;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 15px 24px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.wrap form div {
   width: 50%;
+}
+
+.wrap form div label {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #303972;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.wrap form div input {
+  margin: 0.5rem 0 1rem;
+  outline: none;
+  border: 1px solid #c1bbeb;
+  border-radius: 5px;
+  padding: 14px;
+}
+
+.btn_wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

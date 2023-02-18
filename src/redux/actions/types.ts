@@ -6,5 +6,10 @@ export const LOGOUT = "LOGOUT";
 export const CLEAR_STORE = "CLEAR_STORE";
 
 // students action
-export const ALL_STUDENTS_GET = "ALL_STUDENTS_GET";
-export const UNPAID_STUDENTS_GET = "UNPAID_STUDENTS_GET";
+export const GET_ALL_STUDENTS = "GET_ALL_STUDENTS";
+export const GET_UNPAID_STUDENTS = "GET_UNPAID_STUDENTS";
+export const CREATE_STUDENT = "CREATE_STUDENT";
+
+// teachers action
+export const GET_ALL_TEACHER = "GET_ALL_TEACHER";
+export const CREATE_TEACHER = "CREATE_TEACHER";

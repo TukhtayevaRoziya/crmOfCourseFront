@@ -5,11 +5,13 @@ import authToken from '../utility/authToken'
 import { authReducer } from './reducers/authReducer'
 import { sidebarReducer } from './reducers/sidebarReducer'
 import { studentsReducer } from './reducers/studentsReducer';
+import { teachersReducer } from './reducers/teachersReducer';
 
 export const store = configureStore({
   reducer: {
     authReducer,
     studentsReducer,
+    teachersReducer,
     sidebarReducer,
   },
   middleware: [thunk],

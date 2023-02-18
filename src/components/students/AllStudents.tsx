@@ -7,13 +7,12 @@ import { StudentType } from "../home/unPaidStudents/Pagination";
 import useWindowSize from "../../utility/hooks";
 
 import styles from "./Students.module.css";
-import api from "../../utility/api";
-import { allStudent } from "../../redux/actions/studentsAction";
+import { getAction } from "../../utility/api";
+import { GET_ALL_STUDENTS } from "../../redux/actions/types";
 
 const AllStudents = () => {
   const { width } = useWindowSize();
 
-  const [data1, setData] = useState<StudentType | any>([]);
   const [data2, setData2] = useState<StudentType | any>([]);
   const [search, setSearch] = useState("");
 
@@ -26,14 +25,7 @@ const AllStudents = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    api
-      .get("/students")
-      .then((res) => {
-        dispatch<any>(allStudent(res.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch<any>(getAction("students", GET_ALL_STUDENTS))
     setData2(allStudents);
   }, [allStudents, dispatch]);
 
@@ -52,10 +44,9 @@ const AllStudents = () => {
       data2.filter((item: StudentType) =>
         String(item.id).includes(search) ? myData.push(item) : null
       );
-      setData(myData);
       setCurrent(1);
       setMinIndex(0);
-    } else setData(data2);
+    }
   };
 
   const dataMap = allStudents.map(
@@ -85,25 +76,25 @@ const AllStudents = () => {
           </h3>
           <h4>
             {!d.amount
-              ? d.className == "a1_"
+              ? d.className === "a1_"
                 ? "150.000"
-                : d.className == "a1"
+                : d.className === "a1"
                 ? "170.000"
-                : d.className == "a2_"
+                : d.className === "a2_"
                 ? "180.000"
-                : d.className == "a2"
+                : d.className === "a2"
                 ? "190.000"
-                : d.className == "b1_"
+                : d.className === "b1_"
                 ? "190.000"
-                : d.className == "b1"
+                : d.className === "b1"
                 ? "200.000"
-                : d.className == "b2_"
+                : d.className === "b2_"
                 ? "200.000"
-                : d.className == "b2"
+                : d.className === "b2"
                 ? "210.000"
-                : d.className == "c1_"
+                : d.className === "c1_"
                 ? "210.000"
-                : d.className == "c1"
+                : d.className === "c1"
                 ? "220.000"
                 : ""
               : ""}
@@ -139,8 +130,7 @@ const AllStudents = () => {
                     ? myData.push(item)
                     : null
                 );
-                setData(myData);
-              } else setData(data2);
+              }
             }}
           />
           <button onClick={onClick}>Search</button>

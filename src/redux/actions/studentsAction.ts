@@ -1,9 +1,9 @@
 import { Dispatch } from "@reduxjs/toolkit";
-import { ALL_STUDENTS_GET, UNPAID_STUDENTS_GET } from "./types";
+import { GET_UNPAID_STUDENTS, GET_ALL_STUDENTS } from "./types";
 
 export const allStudent = (data: any) => (dispatch: Dispatch) => {
-  dispatch({ type: ALL_STUDENTS_GET, payload: data });
+  dispatch({ type: GET_ALL_STUDENTS, payload: data });
 };
 export const unpaidStudent = (data: any) => (dispatch: Dispatch) => {
-  dispatch({ type: UNPAID_STUDENTS_GET, payload: data });
+  dispatch({ type: GET_UNPAID_STUDENTS, payload: data });
 };

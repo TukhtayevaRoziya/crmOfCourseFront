@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { createAction } from "./../../utility/api";
+import { CREATE_STUDENT } from "../../redux/actions/types";
 
 import styles from "./AddStudents.module.css";
-import api from "./../../utility/api";
 
 const AddStudents = () => {
   const [leng, setLeng] = useState(0);
+  const dispatch = useDispatch();
+  const { allStudents } = useSelector((state: any) => state.studentsReducer);
+
+  useEffect(() => {
+    setLeng(allStudents.length);
+  }, [allStudents.length, leng]);
+
   const onSubmit = ({ target }: any) => {
-    api.get("/students").then((res: any) => {
-      setLeng(res.data.length);
-    });
+
     const data = {
       name: target[0].value,
       surname: target[1].value,
@@ -19,15 +27,9 @@ const AddStudents = () => {
       tel: target[6].value,
       className: target[7].value,
       payment: target[8].checked,
-      id: leng + 1,
+      id: leng,
     };
-    api
-      .post("students/add", data, {
-        headers: { "Content-Type": "application/json" },
-      })
-      .then((res) => {
-        console.log(res.data);
-      });
+    dispatch<any>(createAction("students/add", CREATE_STUDENT, data));
   };
 
   const inpData = [

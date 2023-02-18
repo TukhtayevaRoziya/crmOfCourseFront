@@ -1,17 +1,27 @@
-import React, { useState } from "react";
-import { BiSearch } from "react-icons/bi";
+import React, { useEffect, useState } from "react";
+import { Pagination, PaginationProps } from "antd";
+import { NavLink } from "react-router-dom";
+
 import { BsThreeDots } from "react-icons/bs";
+import { BiSearch } from "react-icons/bi";
 import { SlPhone } from "react-icons/sl";
 import { GoMail } from "react-icons/go";
 
 import useWindowSize from "../../utility/hooks";
+import { getAction } from './../../utility/api';
 
 import styles from "./Teachers.module.css";
-import { Pagination, PaginationProps } from "antd";
-import { NavLink } from "react-router-dom";
+import { GET_ALL_TEACHER } from './../../redux/actions/types';
+import { useDispatch, useSelector } from "react-redux";
 
 const Teachers = () => {
   const { width } = useWindowSize();
+  const { data } = useSelector((state:any) => state.teachersReducer);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch<any>(getAction("teachers", GET_ALL_TEACHER));
+  }, [dispatch]);
 
   const pageSize = width <= 600 ? 2 : 6;
 
@@ -19,107 +29,32 @@ const Teachers = () => {
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(pageSize);
 
-  const data = [
-    {
-      id: 1,
-      fullname: "Dimitres Viga",
-      profession: "Mathematics",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 2,
-      fullname: "Tom Housenburg",
-      profession: "Science",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 3,
-      fullname: "Dana Benevista",
-      profession: "Art",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 4,
-      fullname: "Salvadore Morbeau",
-      profession: "Biology",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 5,
-      fullname: "Maria Historia",
-      profession: "History",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 6,
-      fullname: "Jack Sally",
-      profession: "Physics",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 7,
-      fullname: "Lula Beatrice",
-      profession: "Algorithm",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 8,
-      fullname: "Nella Vita",
-      profession: "Engilsh",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 9,
-      fullname: "Nadia Laravela",
-      profession: "Programming",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 10,
-      fullname: "Dakota Farral",
-      profession: "Science",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 11,
-      fullname: "Miranda Adila",
-      profession: "Art",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-    {
-      id: 12,
-      fullname: "Indiana Barker",
-      profession: "Biology",
-      tel: 1234567890,
-      email: "jordan@mail.com",
-    },
-  ];
-
   const onChange: PaginationProps["onChange"] = (page: any) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);
     setMaxIndex(page * pageSize);
   };
+  type DataType = {
+    id: number
+    name: string
+    surname: string
+    profession: string
+    tel: string
+    email: string
+  }
+
+  if(!data.length){
+    return <h1>No Teachers yet</h1>
+  }
 
   const dataMap = data.map(
-    (d, index: number) =>
+    (d:DataType, index: number) =>
       index >= minIndex &&
       index < maxIndex && (
-        <div className={styles.block} key={d.id}>
+        <div className={styles.block} key={index}>
           <BsThreeDots />
           <div className={styles.img} />
-          <h1>{width < 1151 ? d.fullname.slice(0, 15) : d.fullname}</h1>
+          <h1>{width < 1151 ? ` ${d.name} ${d.surname[0]}.` : ` ${d.name} ${d.surname}`}</h1>
           <h2>{d.profession}</h2>
           <div className={styles.contact}>
             <a href={`tel:+${d.tel}`} type="tel">
