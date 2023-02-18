@@ -1,15 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import styles from "./AddStudents.module.css";
 import api from "./../../utility/api";
 
 const AddStudents = () => {
-  // const { token } = useSelector((state: any) => state.authReducer);
-  // const { token } = useSelector((state: any) => state.authReducer);
-  const [leng, setLeng] = useState(0)
+  const [leng, setLeng] = useState(0);
   const onSubmit = ({ target }: any) => {
-    api.get("/students").then((res:any) => {
-      setLeng(res.data.length)
+    api.get("/students").then((res: any) => {
+      setLeng(res.data.length);
     });
     const data = {
       name: target[0].value,
@@ -21,7 +19,7 @@ const AddStudents = () => {
       tel: target[6].value,
       className: target[7].value,
       payment: target[8].checked,
-      id: leng+1,
+      id: leng + 1,
     };
     api
       .post("students/add", data, {
@@ -101,7 +99,6 @@ const AddStudents = () => {
   ];
 
   const mapInpData = inpData.map((i) => {
-    // const name = data[i.id]?.value === "" ? isRequired : "";
     const cName = i.class ? i.class : "";
     return (
       <div className={styles.student_details_block + " " + cName} key={i.id}>
@@ -109,16 +106,12 @@ const AddStudents = () => {
         {i.children ? (
           i.children
         ) : (
-          <>
-            <input placeholder={i.placeholder} required />
-          </>
+          <input placeholder={i.placeholder} required />
         )}
       </div>
     );
   });
 
-  // const text =
-  //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ";
   return (
     <div className={styles.wrap}>
       <div className={styles.student_details}>
@@ -130,7 +123,6 @@ const AddStudents = () => {
               styles.student_details_block + " " + styles.student_details__btn
             }
           >
-            {/* <button>Save as Draft</button> */}
             <button>Submit</button>
           </div>
         </form>

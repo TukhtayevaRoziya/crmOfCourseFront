@@ -11,7 +11,6 @@ const UnPainStudents = () => {
   const { unPaidStudents } = useSelector((state: any) => state.studentsReducer);
   const dispatch = useDispatch();
 
-
   useEffect(() => {
     api
       .get("/students/unpaid")
