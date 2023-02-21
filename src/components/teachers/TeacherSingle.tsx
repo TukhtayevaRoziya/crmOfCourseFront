@@ -6,6 +6,8 @@ import { GET_ALL_TEACHER } from "../../redux/actions/types";
 import { TeacherDataType } from "../../utility/types";
 import { getAction } from "../../utility/api";
 
+import styles from './TeacherSingle.module.css'
+
 const TeacherSingle = () => {
   const { id } = useParams();
   const { data } = useSelector((state: any) => state.teachersReducer);
@@ -19,7 +21,7 @@ const TeacherSingle = () => {
     console.log();
     if (id === a._id) {
       return (
-        <div>
+        <div className={styles.body}>
           <header>
             <div>
               <h1>{a.name}</h1>
@@ -29,10 +31,19 @@ const TeacherSingle = () => {
         </div>
       );
     } else {
-      return <div key={a.id}></div>;
+      return <div key={a.id}>{a.id}</div>;
     }
   });
-  return <div>{map}</div>;
+  return <div>{map}
+     <div  className={styles.body}>
+          <header>
+            <div>
+              <h1>{'name'}</h1>
+              <h2>{'a.profession'}</h2>
+            </div>
+          </header>
+        </div>
+  </div>;
 };
 
 export default TeacherSingle;
