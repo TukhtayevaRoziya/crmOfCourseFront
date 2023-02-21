@@ -34,16 +34,17 @@ const TeacherSingle = () => {
       return <div key={a.id}>{a.id}</div>;
     }
   });
-  return <div>{map}
-     <div  className={styles.body}>
-          <header>
-            <div>
-              <h1>{'name'}</h1>
-              <h2>{'a.profession'}</h2>
-            </div>
-          </header>
-        </div>
-  </div>;
+  return <div>{map}  </div> 
+    //  {/* <div  className={styles.body}>
+    //       <header>
+    //         <div>
+    //           <h1>{'name'}</h1>
+    //           <h2>{'a.profession'}</h2>
+    //         </div>
+    //       </header>
+    //     </div>*/
+
+  // }
 };
 
 export default TeacherSingle;
