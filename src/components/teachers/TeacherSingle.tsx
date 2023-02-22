@@ -25,7 +25,7 @@ const TeacherSingle = () => {
           <header>
             <div>
               <h1>{a.name}</h1>
-              <h2>{a.profession}</h2>
+              <h2>{a.profession}</h2> 
             </div>
           </header>
         </div>
