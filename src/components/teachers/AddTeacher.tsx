@@ -1,8 +1,10 @@
 import React from "react";
-import styles from "./AddTeacher.module.css";
 import { useDispatch } from 'react-redux';
+
 import { createAction } from "../../utility/api";
 import { CREATE_TEACHER } from "../../redux/actions/types";
+
+import styles from "./AddTeacher.module.css";
 
 const AddTeacher = () => {
   const dispatch = useDispatch()
@@ -16,7 +18,7 @@ const AddTeacher = () => {
       degree: e.target[5].value,
       profession: e.target[6].value,
       startWork: e.target[7].value,
-      finishWork: e.target[8].value,
+      // finishWork: e.target[8].value,
       email: e.target[9].value,
       tel: e.target[10].value,
     }
@@ -58,10 +60,10 @@ const AddTeacher = () => {
           <label htmlFor="startWork">StartWork: </label>
           <input id="startWork" required />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="finishWork">FinishWork: </label>
           <input id="finishWork" required />
-        </div>
+        </div> */}
         <div>
           <label htmlFor="email">Email: </label>
           <input id="email" type={"email"} required />
