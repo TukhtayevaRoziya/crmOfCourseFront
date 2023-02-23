@@ -77,9 +77,10 @@
 
 .main__education {
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: space-between;
   flex-direction: column;
+  border: 2px solid firebrick;
 }
 
 .main__education p {
