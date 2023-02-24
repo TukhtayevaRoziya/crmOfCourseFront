@@ -38,51 +38,149 @@ const TeacherSingle = () => {
 
   interface DataType {
     key: React.Key;
-    name: string;
-    age: number;
-    address: string;
+    type?: string;
+    students?: number
+    started?: string
+    time?: string
+    amount?: string
   }
 
   const columns: ColumnsType<DataType> = [
     {
-      title: "Name",
-      dataIndex: "name",
+      title: "Type:",
+      dataIndex: "type",
       render: (text: string) => <a href="/">{text}</a>,
     },
     {
-      title: "Age",
-      dataIndex: "age",
+      title: "Students",
+      dataIndex: "students",
     },
     {
-      title: "Address",
-      dataIndex: "address",
+      title: "Started: ",
+      dataIndex: "started",
+    },
+    {
+      title: "Time: ",
+      dataIndex: "time",
+    },
+    {
+      title: "Amount: ",
+      dataIndex: "amount",
     },
   ];
 
   const data2: DataType[] = [
     {
       key: "1",
-      name: "John Brown",
-      age: 32,
-      address: "New York No. 1 Lake Park",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,400,000',
     },
     {
       key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,400,000',
     },
     {
       key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sydney No. 1 Lake Park",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,000,000',
     },
     {
       key: "4",
-      name: "Disabled User",
-      age: 99,
-      address: "Sydney No. 1 Lake Park",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
+    },
+    {
+      key: "4",
+      type: "B2 (kids)",
+      students: 14,
+      started: '12',
+      time: 'TTS  14:00',
+      amount: '1,300,000',
     },
   ];
 
@@ -95,8 +193,8 @@ const TeacherSingle = () => {
       );
     },
     getCheckboxProps: (record: DataType) => ({
-      disabled: record.name === "Disabled User", // Column configuration not to be checked
-      name: record.name,
+      // disabled: record. === "Disabled User", // Column configuration not to be checked
+      // name: record.name,
     }),
   };
 

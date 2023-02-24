@@ -65,12 +65,12 @@
   padding: 8px;
   box-sizing: border-box;
   border-radius: 50%;
-  background: #FCC43E;
+  background: #fcc43e;
   color: #fff;
   margin-right: 10px;
 }
 .main__header__delete svg {
-  background-color: #FF4550;
+  background-color: #ff4550;
   margin-right: 0;
   cursor: pointer;
 }
@@ -81,6 +81,18 @@
   justify-content: space-between;
   flex-direction: column;
   border: 2px solid firebrick;
+}
+
+.main__education h1 {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #fcc43e;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .main__education p {
@@ -104,7 +116,7 @@
 }
 
 .main__education button {
-  background: #4D44B5;
+  background: #4d44b5;
   border-radius: 40px;
   border: none;
   outline: none;
