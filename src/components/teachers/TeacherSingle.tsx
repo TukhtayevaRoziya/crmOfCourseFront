@@ -235,7 +235,7 @@ const TeacherSingle = () => {
             </div>
             <div className={styles.main__education}>
               <h1>Classes:</h1>
-              <Table pagination={{ pageSize: 10 }} rowSelection={rowSelection} columns={columns} dataSource={data2} />
+             
               <div>
                 <button>Edit</button>
               </div>
@@ -244,7 +244,8 @@ const TeacherSingle = () => {
         </div>
       );
     } else {
-      return <div key={a._id}></div>;
+      return (<><div key={a._id}></div>
+      </>);
     }
   });
   return <div>{map} </div>;
