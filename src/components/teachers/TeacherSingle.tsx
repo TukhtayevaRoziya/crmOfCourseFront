@@ -234,7 +234,6 @@ const TeacherSingle = () => {
               </Modal>
             </div>
             <div className={styles.main__education}>
-              <h1>Classes:</h1>
              
               <div>
                 <button>Edit</button>
