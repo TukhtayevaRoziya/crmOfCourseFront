@@ -6,7 +6,7 @@ type initialStateType = {
 
 const initialState:initialStateType = {
   data: [],
-};
+}; 
 
 export const teachersReducer = (state = initialState, action: any) => {
   const { type, payload } = action;
