@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+## CRM of the Course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🔗 Live Demo
+Check out the live website: [CRM](https://education-crm-by-roziya.netlify.app/)
 
-## Available Scripts
+A robust, enterprise-level management platform for educational centers, built with React, TypeScript, and Ant Design. This system streamlines student administration, scheduling, and financial analytics.
 
-In the project directory, you can run:
+### ✨ Key Features
+Data Visualization: Interactive charts using Chart.js for student growth and revenue tracking.
 
-### `yarn start`
+Advanced Scheduling: Integrated Syncfusion calendars for managing lesson timetables.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Student & Group Management: Full CRUD operations powered by Ant Design components.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+State Management: Predictable state handling using Redux Toolkit and Redux Thunk.
 
-### `yarn test`
+Printing Support: Export reports and invoices directly using react-to-print.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Mock Data Integration: Testing environment ready with Faker.js.
 
-### `yarn build`
+## 🛠 Tech Stack
+Framework: React 18 (TypeScript)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+UI Library: Ant Design (antd)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+State: Redux Toolkit
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Charts: Chart.js & React-Chartjs-2
 
-### `yarn eject`
+Calendar: Syncfusion React Calendars
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+HTTP Client: Axios
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Installation & Setup
+Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Install dependencies:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Start the development server:
 
-## Learn More
+## 📂 Key Scripts
+npm start: Runs the app in development mode.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm run build: Builds the app for production to the build folder.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm test: Launches the test runner.
