@@ -28,6 +28,7 @@
   padding-left: 20px;
   margin-top: 30px !important;
   background: #4d44b5 !important;
+  min-height: 99vh;
 }
 
 .ant-tooltip-arrow-content {

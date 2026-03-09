@@ -7,18 +7,18 @@ type PrivateRouteType = {
 }
 
 const PrivateRoute: FC<PrivateRouteType> = ({ children }) => {
-  const { token } = useSelector((state: any) => state.authReducer)
+  // const { token } = useSelector((state: any) => state.authReducer)
 
-  if (token) return children
-  else return <Navigate to="/" />
+  // if (token) return children
+  return children
 }
 
 export default PrivateRoute
 
 
-export const PrivateRouteForAdmin: FC<PrivateRouteType> = ({ children }) => {
-  const { token } = useSelector((state: any) => state.authReducer)
+// export const PrivateRouteForAdmin: FC<PrivateRouteType> = ({ children }) => {
+//   // const { token } = useSelector((state: any) => state.authReducer)
 
-  if (!token) return children
-  else return <Navigate to="/dashboard" />
-}
+//   // if (!token) return children
+//   return <Navigate to="/dashboard" />
+// }

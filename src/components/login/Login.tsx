@@ -11,23 +11,24 @@ import styles from './Login.module.css'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const { isAuth } = useSelector((state: any) => state.authReducer)
   const navigate = useNavigate()
+
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    if (isAuth) {
-      navigate('/dashboard')
-    }
-  }, [isAuth, navigate])
+  // useEffect(() => {
+  //   // if (isAuth) {
+  //     // 
+  //   // }
+  // }, [navigate])
 
   const btn = () => {
-    if (!email || !password) {
-      alert('Fill all field, please!')
-    } else {
-      const data = { email, password }
-      dispatch<any>(login(data))
-    }
+    navigate('/dashboard')  
+    // if (!email || !password) {
+    //   alert('Fill all field, please!')
+    // } else {
+    //   const data = { email, password }
+    //   dispatch<any>(login(data))
+    // }
   }
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {

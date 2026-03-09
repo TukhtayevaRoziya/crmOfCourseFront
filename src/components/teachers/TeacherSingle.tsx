@@ -11,7 +11,7 @@ import { BiMap, BiPhone } from "react-icons/bi";
 import { AiOutlineMail } from "react-icons/ai";
 // import { BsThreeDots } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
-import { Modal, Table } from "antd";
+import { Modal } from "antd";
 import { ColumnsType } from "antd/es/table";
 
 const TeacherSingle = () => {
