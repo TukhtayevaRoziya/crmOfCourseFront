@@ -4,7 +4,7 @@ import { LOGOUT } from "../redux/actions/types";
 import { store } from "../redux/store";
 
 const api = axios.create({
-  baseURL: "http://localhost:3001/" || process.env.REACT_APP_API_URL,
+  baseURL: "https://crm-of-the-course-back-by-roziya.vercel.app/" ,
   // baseURL: process.env.REACT_APP_API_URL ,
   headers: {
     "Content-Type": "application/json",

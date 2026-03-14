@@ -57,47 +57,25 @@ const AllStudents = () => {
           <strong>{++index}.</strong>
           <h1>
             {width <= 800
-              ? d.name.slice(0, 6) === d.name.toString()
-                ? d.name.toString()
-                : d.name.toString().slice(0, 6) + "..."
+              ? d.fullName.slice(0, 6) === d.fullName.toString()
+                ? d.fullName.toString()
+                : d.fullName.toString().slice(0, 6) + "..."
               : width <= 1400
-              ? d.name.length > 15
-                ? d.name.slice(0, 14) + "..."
-                : d.name
-              : d.name.length > 18
-              ? d.name.slice(0, 17) + "..."
-              : d.name}
+              ? d.fullName.length > 15
+                ? d.fullName.slice(0, 14) + "..."
+                : d.fullName
+              : d.fullName.length > 18
+              ? d.fullName.slice(0, 17) + "..."
+              : d.fullName}
           </h1>
           <h2>{d.id}</h2>
           <h3>
-            {d.className[d.className.length - 1] === "_"
-              ? d.className.slice(0, d.className.length - 1)
-              : "K:" + d.className}
+            {d.class[d.class.length - 1] === "_"
+              ? d.class.slice(0, d.class.length - 1)
+              : "K:" + d.class}
           </h3>
           <h4>
-            {!d.amount
-              ? d.className === "a1_"
-                ? "150.000"
-                : d.className === "a1"
-                ? "170.000"
-                : d.className === "a2_"
-                ? "180.000"
-                : d.className === "a2"
-                ? "190.000"
-                : d.className === "b1_"
-                ? "190.000"
-                : d.className === "b1"
-                ? "200.000"
-                : d.className === "b2_"
-                ? "200.000"
-                : d.className === "b2"
-                ? "210.000"
-                : d.className === "c1_"
-                ? "210.000"
-                : d.className === "c1"
-                ? "220.000"
-                : ""
-              : ""}
+            {d.amount}
           </h4>
           {!d.payment ? (
             width <= 400 ? (
@@ -111,7 +89,7 @@ const AllStudents = () => {
             <button className={styles.paid}>Paid</button>
           )}
         </div>
-      )
+      ),
   );
   return (
     <div className={styles.wrap}>

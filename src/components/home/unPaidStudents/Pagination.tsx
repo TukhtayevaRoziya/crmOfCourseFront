@@ -12,9 +12,9 @@ import api from "../../../utility/api";
 // import useWindowSize from "../../../utility/hooks";
 export type StudentType = {
   id: number;
-  name: string;
+  fullName: string;
   surname: string;
-  className: string;
+  class: string;
   amount: string;
   payment: boolean;
 };
@@ -28,9 +28,9 @@ const MyPagination = () => {
 
   const [value, setValue] = useState<StudentType>({
     id: 0,
-    name: "Undefined",
+    fullName: "Undefined",
     surname: "Undefined",
-    className: "undefined",
+    class: "undefined",
     amount: "undefined",
     payment: false,
   });
@@ -71,11 +71,11 @@ const MyPagination = () => {
             <h2>ID:</h2>
           </div>
           <div>
-            <p>{props?.name}</p>
+            <p>{props?.fullName}</p>
 
-            <p>   {props.className[props.className.length - 1] === "_"
-                  ? props.className.slice(0, props.className.length - 1)
-                  : "Kids:" + props.className}</p>
+            <p>   {props.class[props.class.length - 1] === "_"
+                  ? props.class.slice(0, props.class.length - 1)
+                  : "Kids:" + props.class}</p>
             <p>{props?.amount}</p>
             <p>{props?.id}</p>
           </div>
@@ -91,7 +91,7 @@ const MyPagination = () => {
           <div className={styles.tbody__student}>
             <h1>{++index}.</h1>
             <h2 className={styles.tbody__student_h2}>
-              {d.name}
+              {d.fullName}
               {d.surname}
               {/* {width <= 800
                 ? d.name.slice(0, 6) === d.name
@@ -118,9 +118,9 @@ const MyPagination = () => {
             <div>
               <h4>Class</h4>
               <h5>
-                {d.className[d.className.length - 1] === "_"
-                  ? d.className.slice(0, d.className.length - 1)
-                  : "K:" + d.className}
+                {d.class[d.class.length - 1] === "_"
+                  ? d.class.slice(0, d.class.length - 1)
+                  : "K:" + d.class}
               </h5>
             </div>
           </div>
@@ -148,9 +148,9 @@ const MyPagination = () => {
                 <ComponentToPrint
                   ref={ref}
                   id={value.id}
-                  name={value.name}
+                  fullName={value.fullName}
                   amount={value.amount} 
-                  className={value.className}
+                  class={value.class}
                   surname={value.surname}
                   payment={value.payment}
                 />
