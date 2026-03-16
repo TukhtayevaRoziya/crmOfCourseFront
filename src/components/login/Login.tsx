@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+// import React, { useEffect, useState } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import img from '../../assets/image/login.png'
 
-import login from './../../redux/actions/authAction'
+// import login from './../../redux/actions/authAction'
 
 import styles from './Login.module.css'
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   // useEffect(() => {
   //   // if (isAuth) {
@@ -32,10 +32,10 @@ const Login = () => {
   }
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value)
+    // setEmail(e.target.value)
   }
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value)
+    // setPassword(e.target.value)
   }
 
   return (

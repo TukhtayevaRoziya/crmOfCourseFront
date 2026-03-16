@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Login from './components/login/Login'
 import Sidebar from './components/sidebar/Sidebar'
 import PrivateRoute from './utility/PrivateRoute'
-import authToken from './utility/authToken'
-import { store } from './redux/store'
+// import authToken from './utility/authToken'
+// import { store } from './redux/store'
 
 import './App.css'
 import 'antd/dist/reset.css'

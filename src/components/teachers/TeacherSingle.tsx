@@ -12,7 +12,7 @@ import { AiOutlineMail } from "react-icons/ai";
 // import { BsThreeDots } from "react-icons/bs";
 import { MdDelete } from "react-icons/md";
 import { Modal } from "antd";
-import { ColumnsType } from "antd/es/table";
+// import { ColumnsType } from "antd/es/table";
 
 const TeacherSingle = () => {
   const { id } = useParams();
@@ -36,167 +36,167 @@ const TeacherSingle = () => {
     setIsModalOpen(false);
   };
 
-  interface DataType {
-    key: React.Key;
-    type?: string;
-    students?: number
-    started?: string
-    time?: string
-    amount?: string
-  }
+  // interface DataType {
+  //   key: React.Key;
+  //   type?: string;
+  //   students?: number
+  //   started?: string
+  //   time?: string
+  //   amount?: string
+  // }
 
-  const columns: ColumnsType<DataType> = [
-    {
-      title: "Type:",
-      dataIndex: "type",
-      render: (text: string) => <a href="/">{text}</a>,
-    },
-    {
-      title: "Students",
-      dataIndex: "students",
-    },
-    {
-      title: "Started: ",
-      dataIndex: "started",
-    },
-    {
-      title: "Time: ",
-      dataIndex: "time",
-    },
-    {
-      title: "Amount: ",
-      dataIndex: "amount",
-    },
-  ];
+  // const columns: ColumnsType<DataType> = [
+  //   {
+  //     title: "Type:",
+  //     dataIndex: "type",
+  //     render: (text: string) => <a href="/">{text}</a>,
+  //   },
+  //   {
+  //     title: "Students",
+  //     dataIndex: "students",
+  //   },
+  //   {
+  //     title: "Started: ",
+  //     dataIndex: "started",
+  //   },
+  //   {
+  //     title: "Time: ",
+  //     dataIndex: "time",
+  //   },
+  //   {
+  //     title: "Amount: ",
+  //     dataIndex: "amount",
+  //   },
+  // ];
 
-  const data2: DataType[] = [
-    {
-      key: "1",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,400,000',
-    },
-    {
-      key: "2",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,400,000',
-    },
-    {
-      key: "3",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,000,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-    {
-      key: "4",
-      type: "B2 (kids)",
-      students: 14,
-      started: '12',
-      time: 'TTS  14:00',
-      amount: '1,300,000',
-    },
-  ];
+  // const data2: DataType[] = [
+  //   {
+  //     key: "1",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,400,000',
+  //   },
+  //   {
+  //     key: "2",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,400,000',
+  //   },
+  //   {
+  //     key: "3",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,000,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  //   {
+  //     key: "4",
+  //     type: "B2 (kids)",
+  //     students: 14,
+  //     started: '12',
+  //     time: 'TTS  14:00',
+  //     amount: '1,300,000',
+  //   },
+  // ];
 
-  const rowSelection = {
-    onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        "selectedRows: ",
-        selectedRows
-      );
-    },
-    getCheckboxProps: (record: DataType) => ({
-      // disabled: record. === "Disabled User", // Column configuration not to be checked
-      // name: record.name,
-    }),
-  };
+  // const rowSelection = {
+  //   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
+  //     console.log(
+  //       `selectedRowKeys: ${selectedRowKeys}`,
+  //       "selectedRows: ",
+  //       selectedRows
+  //     );
+  //   },
+  //   getCheckboxProps: (record: DataType) => ({
+  //     // disabled: record. === "Disabled User", // Column configuration not to be checked
+  //     // name: record.name,
+  //   }),
+  // };
 
   const map = data.map((a: TeacherDataType) => {
     if (id === a._id) {
