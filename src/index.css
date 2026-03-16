@@ -37,6 +37,8 @@ body {
   color: #4D44B5 !important;
 }
 
-/* body > div:nth-last-of-type(2){ */
-  /* display: none !important; */
-/* } */
+div[style*="z-index: 999999999;"] { 
+
+
+  display: none !important;
+ } 

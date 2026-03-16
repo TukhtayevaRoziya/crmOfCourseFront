@@ -1,5 +1,5 @@
 .wrap {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .wrap,
@@ -18,7 +18,7 @@
 .title h1 {
   font-weight: 700;
   font-size: 18px;
-  line-height: 30px;
+  line-height: 25px;
   color: #303972;
 }
 

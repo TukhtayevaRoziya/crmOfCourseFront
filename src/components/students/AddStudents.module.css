@@ -74,6 +74,10 @@
   justify-content: flex-start;
 }
 
+.student_details_block_radio_div input{
+  margin-top: 0 !important;
+}
+
 .student_details form .student_details_block div {
   display: flex;
   justify-content: space-between;

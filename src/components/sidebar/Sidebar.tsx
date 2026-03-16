@@ -48,7 +48,7 @@ const Sidebar: React.FC = () => {
         <div className="logo">
           <h1 className={styles.logo}>
             <span>A</span>
-            Akademi
+            Academy
           </h1>
         </div>
         <Menu

@@ -38,7 +38,8 @@ const Settings = () => {
   const { width } = useWindowSize()
 
   useEffect(() => {
-    api.get("/").then((res) => {
+    api.get("/info").then((res) => {
+      console.log(res.data)
       setData(res.data[0]);
       setStr(data.name + " " + data.surname);
       setPlace(data.place);
@@ -125,7 +126,7 @@ const Settings = () => {
               <AiOutlineMail />
             </h4>
             {!show ? (
-              <h5>{width > 880 || width < 430  ? email.length > 15 ? email.slice(0, 15) + '...' : email : email}</h5>
+              <h5>{width > 880 || width < 430  ? email?.length > 15 ? email.slice(0, 15) + '...' : email : email}</h5>
             ) : (
               <input
                 value={email}

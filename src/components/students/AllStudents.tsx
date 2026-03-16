@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Pagination, PaginationProps } from "antd";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 import { StudentType } from "../home/unPaidStudents/Pagination";
 import useWindowSize from "../../utility/hooks";
 
 import styles from "./Students.module.css";
-import { getAction } from "../../utility/api";
-import { GET_ALL_STUDENTS } from "../../redux/actions/types";
+import api from "../../utility/api";
+// import { GET_ALL_STUDENTS } from "../../redux/actions/types";
 
 const AllStudents = () => {
   const { width } = useWindowSize();
@@ -21,17 +21,21 @@ const AllStudents = () => {
   const [current, setCurrent] = useState(1);
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(pageSize);
-  const { allStudents } = useSelector((state: any) => state.studentsReducer);
-  const dispatch = useDispatch();
+  // const { allStudents } = useSelector((state: any) => state.studentsReducer);
+  // const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch<any>(getAction("students", GET_ALL_STUDENTS))
-    setData2(allStudents);
-  }, [allStudents, dispatch]);
+    // dispatch<any>(getAction("students", GET_ALL_STUDENTS))
+    // setData2(allStudents);
 
-  if (!allStudents) {
-    return <div>No Un Paid Students yet</div>;
-  }
+        api.get('/students').then((res) => {
+      setData2(res.data)
+    })
+  }, []);
+
+  // if (!allStudents) {
+  //   return <div>No Un Paid Students yet</div>;
+  // }
   const onChange: PaginationProps["onChange"] = (page: any) => {
     setCurrent(page);
     setMinIndex((page - 1) * pageSize);
@@ -49,7 +53,7 @@ const AllStudents = () => {
     }
   };
 
-  const dataMap = allStudents.map(
+  const dataMap = data2.map(
     (d: StudentType, index: number) =>
       index >= minIndex &&
       index < maxIndex && (
@@ -103,8 +107,9 @@ const AllStudents = () => {
               setSearch(e.target.value);
               if (search) {
                 const myData: StudentType[] = [];
+                console.log(myData)
                 data2.filter((item: StudentType) =>
-                  String(item.id).includes(e.target.value)
+                  item.fullName.includes(e.target.value)
                     ? myData.push(item)
                     : null
                 );
@@ -130,7 +135,7 @@ const AllStudents = () => {
       <Pagination
         current={current}
         onChange={onChange}
-        total={allStudents.length}
+        total={data2.length}
         pageSize={pageSize}
       />
     </div>

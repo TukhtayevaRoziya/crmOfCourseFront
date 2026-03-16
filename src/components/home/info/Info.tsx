@@ -20,7 +20,7 @@ const Info = () => {
 
   useEffect(() => {
     api.get('info').then((res) => {
-      setData(res.data)
+      setData(res.data.filter((d:any)=>d.id !== 0))
     })
   }, [])
 
