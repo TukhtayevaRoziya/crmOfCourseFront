@@ -18,6 +18,7 @@ const login = (body: BodyType): AppThunk  => async (dispatch) => {
       payload: res.data,
     })
     dispatch(checkToken(3600))
+    
   } catch (err) {
     alert(err)
     dispatch({

@@ -107,7 +107,6 @@ const AllStudents = () => {
               setSearch(e.target.value);
               if (search) {
                 const myData: StudentType[] = [];
-                console.log(myData)
                 data2.filter((item: StudentType) =>
                   item.fullName.includes(e.target.value)
                     ? myData.push(item)

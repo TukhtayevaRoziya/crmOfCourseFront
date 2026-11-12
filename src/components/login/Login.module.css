@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   flex-wrap: nowrap;
+  background-color: white;
 }
 
 .mainPart {

@@ -39,7 +39,6 @@ const Settings = () => {
 
   useEffect(() => {
     api.get("/info").then((res) => {
-      console.log(res.data)
       setData(res.data[0]);
       setStr(data.name + " " + data.surname);
       setPlace(data.place);
