@@ -2,40 +2,41 @@ import { Route, Routes } from 'react-router-dom'
 
 import Login from './components/login/Login'
 import Sidebar from './components/sidebar/Sidebar'
-import PrivateRoute from './utility/PrivateRoute'
-// import authToken from './utility/authToken'
-// import { store } from './redux/store'
+import PrivateRoute, { PrivateRouteForAdmin } from './utility/PrivateRoute'
+import authToken from './utility/authToken'
+import { store } from './redux/store'
 
 import './App.css'
 import 'antd/dist/reset.css'
+import { useEffect } from 'react'
 
 function App() {
-  // useEffect(() => {
-  //   if (localStorage.token) {
-  //     authToken(localStorage.token)
-  //   }
+  useEffect(() => {
+    if (localStorage.token) {
+      authToken(localStorage.token)
+    }
 
-  //   window.addEventListener('storage', () => {
-  //     if (!localStorage.token) store.dispatch({ type: 'LOGOUT' })
-  //   })
-  // }, [])
+    window.addEventListener('storage', () => {
+      if (!localStorage.token) store.dispatch({ type: 'LOGOUT' })
+    })
+  }, [])
   return (
     <div className="App">
       <Routes>
         <Route
           index 
           element={
-            // <PrivateRouteForAdmin>
+            <PrivateRouteForAdmin>
               <Login />
-            // </PrivateRouteForAdmin>
+             </PrivateRouteForAdmin>
           }
         />
         <Route
           path="/"
           element={
-            // <PrivateRouteForAdmin>
+             <PrivateRouteForAdmin>
               <Login />
-            // </PrivateRouteForAdmin>
+             </PrivateRouteForAdmin>
           }
         />
 

@@ -74,7 +74,7 @@ const Sidebar: React.FC = () => {
             className="site-layout-sub-header-background"
             style={{ padding: 0, width: "calc(100% - 1px)" }}
           >
-            <h1 className={styles.title}>
+            <h1 className={styles.title} >
               {win === "#/dashboard/students/:id"
                 ? "Students"
                 : win === "#/dashboard/teachers/"

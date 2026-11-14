@@ -59,6 +59,7 @@
   box-sizing: border-box;
   margin-bottom: 20px;
   color: #06152b;
+  width: 100%;
 }
 
 .inp_group input::placeholder {
@@ -81,6 +82,8 @@
   font-size: 16px;
   cursor: pointer;
   padding: 15px;
+  margin: 0 !important;
+
 }
 
 .imgPart {

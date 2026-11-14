@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { AxiosResponse } from "axios";
+import { notification } from "antd";
+
+import login from "./../../redux/actions/authAction";
+import api from "../../utility/api";
 
 import img from "../../assets/image/login.png";
 
-import login from "./../../redux/actions/authAction";
-
 import styles from "./Login.module.css";
-import api from "../../utility/api";
-import { AxiosResponse } from "axios";
-import { notification } from "antd";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,16 +20,17 @@ const Login = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {}, [navigate]);
-type NotificationType = 'success' | 'info' | 'warning' | 'error';
+  type NotificationType = "success" | "info" | "warning" | "error";
 
   const openNotificationWithIcon = (type: NotificationType) => {
     api1[type]({
-      title: 'Email or password wrong',
-      description:
-        'Please check your email or password',
+      title: "Email or password wrong",
+      description: "Please check your email or password",
     });
   };
   const btn = () => {
+    openNotificationWithIcon("error");
+
     if (!email || !password) {
       alert("Fill all field, please!");
     } else {
@@ -42,7 +43,7 @@ type NotificationType = 'success' | 'info' | 'warning' | 'error';
           navigate("/dashboard");
           dispatch<any>(login({ email, password }));
         });
-        openNotificationWithIcon('error')
+      console.log("error");
     }
   };
 
@@ -55,7 +56,6 @@ type NotificationType = 'success' | 'info' | 'warning' | 'error';
 
   return (
     <div className={styles.wrapper}>
-      {     contextHolder}
       <div className={styles.mainPart}>
         <div className={styles.mainPart__Login}>
           <h1>
@@ -83,6 +83,8 @@ type NotificationType = 'success' | 'info' | 'warning' | 'error';
                 required={true}
                 onChange={onChangePassword}
               />
+              {contextHolder}
+
               <button onClick={btn}>Log in</button>
             </>
           </div>
