@@ -26,6 +26,7 @@ const Teachers = () => {
 
   const pageSize = width <= 600 ? 2 : 6;
 
+  console.log(data)
   const [current, setCurrent] = useState(1);
   const [minIndex, setMinIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(pageSize);
@@ -44,13 +45,17 @@ const Teachers = () => {
     (d: TeacherDataType, index: number) =>
       index >= minIndex &&
       index < maxIndex && (
-        <NavLink to={"" + d._id} className={styles.block} key={index}>
+        <NavLink to={"" + d.id} className={styles.block} key={index}>
           <BsThreeDots />
           <div className={styles.img} />
           <h1>
-            {width < 1151
-              ? ` ${d.name} ${d.surname[0]}.`
-              : ` ${d.name} ${d.surname}`}
+            {
+            // width < 1151
+              // ? ` ${
+                d.fullName
+              // } ${d.surname[0]}.`
+              // : ` ${d.name} ${d.surname}`
+              }
           </h1>
           <h2>{d.profession}</h2>
           <div className={styles.contact}>

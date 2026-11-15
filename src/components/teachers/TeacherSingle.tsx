@@ -199,12 +199,12 @@ const TeacherSingle = () => {
   // };
 
   const map = data.map((a: TeacherDataType) => {
-    if (id === a._id) {
+    if (Number(id) === a.id) {
       return (
         <div className={styles.body} key={a._id}>
           <header>
             <div>
-              <h1>{a.name}</h1>
+              <h1>{a.fullName}</h1>
               <h2>{a.profession}</h2>
             </div>
           </header>

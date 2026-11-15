@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { useDispatch } from 'react-redux'
 import { Dropdown, MenuProps } from 'antd'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import {
   IoIosSettings,
   IoMdNotificationsOutline,
@@ -16,17 +16,21 @@ import styles from './RightAdminNavbar.module.css'
 const RightAdminNavbarIcons: FC<RightAdminNavbar_Icons__PropsType> = (
   data: any,
 ) => {
+    const navigate = useNavigate();
+  
   const items2: MenuProps['items'] = [
     {
       key: '1',
       label: <p>You have no unread notifications</p>,
     },
   ]
+  console.log(data.data)
 
   const dispatch = useDispatch()
   const logoutHandler = () => {
     dispatch<any>(logout())
     localStorage.removeItem('token')
+    navigate("/")
   }
 
   const items: MenuProps['items'] = [

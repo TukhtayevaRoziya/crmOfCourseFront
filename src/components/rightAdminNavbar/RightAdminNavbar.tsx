@@ -13,7 +13,7 @@ const RightAdminNavbar = () => {
   });
 
   useEffect(() => {
-    api.get("/").then((res) => {
+    api.get("/info").then((res) => {
       if (res.data) {
         setData(res.data[0]);
       }
